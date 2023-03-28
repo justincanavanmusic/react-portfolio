@@ -8,14 +8,14 @@ import Resume from './pages/Resume'
 
 export default function SiteContainer(props) {
 const [currentPage, setCurrentPage] = useState('Portfolio')
-console.log(props);
+// console.log(props.styles.paragraph);
 
-const displayPage = (props) => {
+const displayPage = () => {
     if (currentPage === 'Portfolio') {
         return < Portfolio />;
     }
     if (currentPage === 'AboutMe') {
-        return < AboutMe />;
+        return < AboutMe paragraph={ props.styles.paragraph } header={ props.styles.header } />;
     }   
     if (currentPage === 'Contact' ) {
         return < Contact />;

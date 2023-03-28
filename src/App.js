@@ -11,9 +11,9 @@ const styles = {
        
   },
    paragraph: {
-       color: "blue",
        marginLeft: "15vw",
        marginRight: "15vw",
+       fontFamily: 'Eczar'
        
    }
 }

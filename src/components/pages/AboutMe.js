@@ -1,14 +1,14 @@
 import React from 'react';
 import './AboutMe.css';
 
-export default function AboutMe(props) {
+
+export default function AboutMe({ paragraph, header }) {
+    // console.log(props)
     return (
         <>
-        {/* <div class="mx-auto" style="width: 200px;"> */}
+      <h2 style={header}>About Me</h2>
+      <p style={paragraph}> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
 
-      <h2 >About Me</h2>
-      <p style={props.paragraph}> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-      {/* </div> */}
       </>
     )
 }
