@@ -27,7 +27,10 @@ const changePage = (page) => setCurrentPage(page)
 
 return (
     <div>
-        <Nav currentPage={currentPage} changePage={changePage} />
+        <Nav 
+        nav = { props.styles.nav } 
+        currentPage = { currentPage } 
+        changePage = { changePage } />
         {displayPage()}
     </div>
 )
