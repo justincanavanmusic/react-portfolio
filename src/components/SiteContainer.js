@@ -16,7 +16,7 @@ const displayPage = () => {
         return < Portfolio />;
     }
     if (currentPage === 'AboutMe') {
-        return < AboutMe paragraph={ props.styles.paragraph } header={ props.styles.header } />;
+        return < AboutMe paragraph={ props.styles.paragraph } header={ props.styles.header } font={ props.styles.font }/>;
     }   
     if (currentPage === 'Contact' ) {
         return < Contact font={props.styles.font} />;

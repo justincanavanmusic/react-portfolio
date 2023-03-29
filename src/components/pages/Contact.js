@@ -25,6 +25,7 @@ export default function Contact({ font }) {
   <label for="exampleFormControlTextarea1" class="form-label">Message</label>
   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 </div>
+<button type="button" class="btn btn-info">Submit</button>
 {/* </div> */}
 </div>
         </>

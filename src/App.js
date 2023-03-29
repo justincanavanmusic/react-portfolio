@@ -5,15 +5,15 @@ import SiteContainer from "./components/SiteContainer";
 const styles = {
   
   header: {
-       marginTop: "8vh",
-       marginBottom: "6vh",
-       fontFamily: 'Eczar'
-       
+       marginTop: "3vh",
+       marginBottom: "3vh",
+        fontFamily: 'Eczar'
   },
    paragraph: {
        marginLeft: "15vw",
        marginRight: "15vw",
-       fontFamily: 'Eczar'
+       marginTop: "3vh",
+        fontFamily: 'Eczar'
    },
    font: {
     fontFamily: 'Eczar'
