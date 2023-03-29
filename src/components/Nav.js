@@ -1,9 +1,9 @@
 import React from 'react';
 import './Nav.css';
 
-function Nav({ currentPage, changePage, nav}) {
+function Nav({ currentPage, changePage, font}) {
     return (
-        <nav style={nav} class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav style={font} class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Justin Canavan</a>
       <ul class="navbar-nav">

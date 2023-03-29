@@ -4,11 +4,6 @@ import SiteContainer from "./components/SiteContainer";
 
 const styles = {
   
-  nav: {
-    fontFamily: 'Eczar'
-
-  },
-
   header: {
        marginTop: "8vh",
        marginBottom: "6vh",
@@ -19,7 +14,9 @@ const styles = {
        marginLeft: "15vw",
        marginRight: "15vw",
        fontFamily: 'Eczar'
-       
+   },
+   font: {
+    fontFamily: 'Eczar'
    }
 }
 

@@ -6,23 +6,26 @@ const contact = {
     github: "https://github.com/justincanavanmusic"
 }
 
-export default function Contact() {
+
+
+export default function Contact({ font }) {
     return (
         <>
-        <div class="card">
-  <h5 class="card-header">Contact</h5>
-  <div class="card-body">
-    <h5 class="card-title">Phone</h5>
-    <p class="card-text">{contact.phone}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+<div style={font} class="container text-center col-5 mt-5 ">
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Name</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="John Doe"></input>
 </div>
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Email</h5>
-    <p class="card-text">{contact.email}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></input>
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+{/* </div> */}
 </div>
         </>
     )

@@ -4,10 +4,11 @@ import Portfolio from './pages/Portfolio'
 import AboutMe from './pages/AboutMe'
 import Contact from './pages/Contact'
 import Resume from './pages/Resume'
+import Footer from './pages/Footer'
 
 
 export default function SiteContainer(props) {
-const [currentPage, setCurrentPage] = useState('Portfolio')
+const [currentPage, setCurrentPage] = useState('AboutMe')
 // console.log(props.styles.paragraph);
 
 const displayPage = () => {
@@ -18,7 +19,7 @@ const displayPage = () => {
         return < AboutMe paragraph={ props.styles.paragraph } header={ props.styles.header } />;
     }   
     if (currentPage === 'Contact' ) {
-        return < Contact />;
+        return < Contact font={props.styles.font} />;
     }
     return < Resume />;
 };
@@ -26,13 +27,17 @@ const displayPage = () => {
 const changePage = (page) => setCurrentPage(page)
 
 return (
+    <>
     <div>
         <Nav 
-        nav = { props.styles.nav } 
+        font = { props.styles.font } 
         currentPage = { currentPage } 
         changePage = { changePage } />
         {displayPage()}
+        <Footer font = {props.styles.font}/>
     </div>
+   
+    </>
 )
 }
 
