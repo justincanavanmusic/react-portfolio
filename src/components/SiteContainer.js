@@ -7,6 +7,7 @@ import Resume from './pages/Resume'
 import Footer from './pages/Footer'
 
 
+
 export default function SiteContainer(props) {
 const [currentPage, setCurrentPage] = useState('AboutMe')
 // console.log(props.styles.paragraph);

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useFormik } from 'formik';
+
 
 const submitButton = (e) => {
   e.preventDefault();
@@ -10,43 +10,80 @@ const submitButton = (e) => {
 
 export default function Contact({ font }) {
   const [email, setEmail] = useState("");
-  console.log(email);
+  const [emailModal, setEmailModal] = useState(false);
 
-  const emailRegex = /^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/
+  const checkEmail = (input) => {
+    const emailRegex = /^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/;
 
-  if(email.match(emailRegex)) {
-    console.log("this email is valid")
-  } else {
-    alert('this email is invalid')
-  }
+    if (input.match(emailRegex)) {
+      setEmail(input);
+      console.log(input);
+    } else {
+      setEmailModal(true);
+    }
+  };
+  console.log(emailModal);
 
   return (
     <>
-      <div style={font} class="container text-center col-5 mt-5 ">
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">
+      <div style={font} className="container text-center col-5 mt-5 ">
+        <div className="mb-3">
+          <label for="exampleFormControlInput1" className="form-label">
             Name
           </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="name"
             placeholder="John Doe"
           ></input>
         </div>
-        <div class="mb-3">
+        <div className="mb-3">
           <label id="email" for="exampleFormControlInput1" class="form-label">
             Email address
           </label>
           <input
             type="email"
             class="form-control"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            defaultValue={email}
+            onBlur={(e) => checkEmail(e.target.value)}
             id="email"
             placeholder="name@example.com"
           ></input>
         </div>
+
+        {emailModal && (
+          
+          <div tabindex="-1">
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title">Email verification</h5>
+                  <button onClick={() => setEmailModal(false)}
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div className="modal-body">
+                  <p>Please be sure to use proper email format!</p>
+                </div>
+                <div className="modal-footer">
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                    onClick={() => setEmailModal(false)}
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label">
             Message
