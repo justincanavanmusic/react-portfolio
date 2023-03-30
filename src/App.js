@@ -6,14 +6,15 @@ const styles = {
   
   header: {
        marginTop: "3vh",
-       marginBottom: "3vh",
+       marginBottom: "2vh",
         fontFamily: 'Eczar'
   },
    paragraph: {
        marginLeft: "15vw",
        marginRight: "15vw",
        marginTop: "3vh",
-        fontFamily: 'Eczar'
+       fontFamily: 'Eczar'
+      
    },
    font: {
     fontFamily: 'Eczar'
