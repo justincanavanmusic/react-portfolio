@@ -1,5 +1,5 @@
 import React from 'react';
-import './AboutMe.css';
+import './index.css';
 import photo from '../../assets/Screenshot 2023-03-28 at 5.44.08 PM.png'
 
 const style = {
@@ -9,8 +9,7 @@ const style = {
 }
 
 export default function AboutMe({ paragraph, header, font }) {
-    
-
+  
     return (
         <>
       <h2 style={header} >About Me</h2>

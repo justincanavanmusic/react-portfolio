@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import './index.css'
 
 
 const submitButton = (e) => {
@@ -9,10 +10,21 @@ const submitButton = (e) => {
 };
 
 export default function Contact({ font }) {
+  const [name, setName] = useState("")
+  const [nameModal, setNameModal] = useState(false)
   const [email, setEmail] = useState("");
   const [emailModal, setEmailModal] = useState(false);
+  const [message, setMessage] = useState('')
+  const [messageModal, setMessageModal] = useState(false)
 
-  const checkEmail = (input) => {
+const nameValidation = (oneName) => {
+  if (oneName.length>0) {
+    setName(oneName)
+  } else
+  setNameModal(true)
+} 
+
+  const validateEmail = (input) => {
     const emailRegex = /^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/;
 
     if (input.match(emailRegex)) {
@@ -22,10 +34,43 @@ export default function Contact({ font }) {
       setEmailModal(true);
     }
   };
-  console.log(emailModal);
+  
+  const messageValidation = (message) => {
+    if (message.length>0) {
+      setMessage(message)
+    } else
+    setMessageModal(true)
+  }
+
 
   return (
     <>
+    {nameModal && (
+      
+      <div id="modal-display" className="modal m-3 p-3">
+      <div tabIndex="-1">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title">Required Field</h5>
+              <button onClick={() => setNameModal(false)}
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">
+              <p>Please enter your name!</p>
+            </div>
+            <div className="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    
+    )}
       <div style={font} className="container text-center col-5 mt-5 ">
         <div className="mb-3">
           <label for="exampleFormControlInput1" className="form-label">
@@ -36,25 +81,31 @@ export default function Contact({ font }) {
             className="form-control"
             id="name"
             placeholder="John Doe"
+            defaultValue={name}
+            onBlur={(e) => nameValidation(e.target.value)}
+            required
           ></input>
         </div>
         <div className="mb-3">
-          <label id="email" for="exampleFormControlInput1" class="form-label">
+          <label id="email" for="exampleFormControlInput1" className="form-label">
             Email address
           </label>
           <input
             type="email"
-            class="form-control"
+            className="form-control"
             defaultValue={email}
-            onBlur={(e) => checkEmail(e.target.value)}
+            onBlur={(e) => validateEmail(e.target.value)}
             id="email"
             placeholder="name@example.com"
           ></input>
         </div>
 
+            {/* modal */}
+
         {emailModal && (
-          
-          <div tabindex="-1">
+      
+          <div id="modal-display" className="modal m-3 p-3">
+          <div tabIndex="-1">
             <div className="modal-dialog">
               <div className="modal-content">
                 <div className="modal-header">
@@ -70,26 +121,52 @@ export default function Contact({ font }) {
                   <p>Please be sure to use proper email format!</p>
                 </div>
                 <div className="modal-footer">
-                  <button
-                    type="button"
-                    className="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                    onClick={() => setEmailModal(false)}
-                  >
-                    Close
-                  </button>
                 </div>
               </div>
             </div>
           </div>
+          </div>
+        
         )}
 
         <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">
+          <label for="exampleFormControlTextarea1" className="form-label">
             Message
           </label>
-          <textarea class="form-control" id="message" rows="3"></textarea>
+          <textarea  className="form-control" id="message" rows="3"  onBlur={(e) => messageValidation(e.target.value)}></textarea>
         </div>
+
+        {messageModal && (
+      
+      <div id="modal-display" className="modal m-3 p-3">
+      <div tabIndex="-1">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title">Required Field</h5>
+              <button onClick={() => setMessageModal(false)}
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">
+              <p>Please enter a message!</p>
+            </div>
+            <div className="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    
+    )}
+      
+      
+      
+      
+      
         <button type="button" class="btn btn-info" onClick={submitButton}>
           Submit
         </button>

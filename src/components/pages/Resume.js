@@ -1,5 +1,8 @@
 import React from "react";
 import resume from "../../assets/justin-canavan-resume.pdf";
+import './index.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
 
 let frontEndSkills = [
   "Javascript",
@@ -19,34 +22,29 @@ let backEndSkills = [
   "REST",
 ];
 
+
+
 export default function Resume() {
   return (
     <>
-
-      <a href={resume} download="justin-canavan-resume.pdf">
-        Check out my resume!
-      </a>
-      
-      <div className="d-flex flex-row justify-content-evenly mb-3 mt-5">
+      <div className="d-flex flex-row justify-content-evenly mb-3 mt-4 font">
+        
+      <div className="d-flex p-2">
         <div className='.d-block'>
-      <h4>Front End Skills</h4>
-      
-    
+      <h4 className="mb-4">Front End Skills</h4>
       <ul className="list-group">
-        <div className="d-flex p-2">
-          <div className="col-sm">
+          
             {frontEndSkills.map((oneSkill) => (
               <li className="list-group-item">{oneSkill}</li>
             ))}
+             </ul>
           </div>
         </div>
-      </ul>
-      </div>
+     
 
       <div className="d-flex p-2">
       <div className='.d-block'>
-      <h4>Back End Skills</h4>
-        <div className="col-sm-2"></div>
+      <h4 className="mb-4">Back End Skills</h4>
         <ul className="list-group">
           {backEndSkills.map((oneSkill) => (
             <li className="list-group-item">{oneSkill}</li>
@@ -55,10 +53,14 @@ export default function Resume() {
       </div>
       </div>
       </div>
+      <div className="mt-5">
+      <a href={resume} download="justin-canavan-resume.pdf" className="font">
+        Check out my resume!
+      </a>
+      </div>
+      
+      
 
-      {/* <li class="list-group-item">A third item</li>
-  <li class="list-group-item">A fourth item</li>
-  <li class="list-group-item">And a fifth one</li> */}
     </>
   );
 }

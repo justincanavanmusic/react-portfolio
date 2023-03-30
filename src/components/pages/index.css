@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Eczar&display=swap');
+
+.font {
+    font-family: 'Eczar'
+}
+
+#modal-display {
+    display: block;
+}
+
+#portfolio-cards {
+    width: 30vw;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 function Footer({ font }) {
     return (
        <>
@@ -7,6 +8,7 @@ function Footer({ font }) {
    <div className="card col-4">
   <div className="card-body">
     <p className="card-title">Github</p>
+ 
     <a href="https://github.com/justincanavanmusic" target= "_blank" class="card-text">Check out my Github!</a>
   </div>
 </div>
