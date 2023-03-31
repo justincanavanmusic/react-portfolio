@@ -55,7 +55,7 @@ const nameValidation = (oneName) => {
               <h5 className="modal-title">Required Field</h5>
               <button onClick={() => setNameModal(false)}
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
@@ -73,7 +73,7 @@ const nameValidation = (oneName) => {
     )}
       <div style={font} className="container text-center col-5 mt-5 ">
         <div className="mb-3">
-          <label for="exampleFormControlInput1" className="form-label">
+          <label htmlFor="exampleFormControlInput1" className="form-label">
             Name
           </label>
           <input
@@ -87,7 +87,7 @@ const nameValidation = (oneName) => {
           ></input>
         </div>
         <div className="mb-3">
-          <label id="email" for="exampleFormControlInput1" className="form-label">
+          <label id="email" htmlFor="exampleFormControlInput1" className="form-label">
             Email address
           </label>
           <input
@@ -112,7 +112,7 @@ const nameValidation = (oneName) => {
                   <h5 className="modal-title">Email verification</h5>
                   <button onClick={() => setEmailModal(false)}
                     type="button"
-                    class="btn-close"
+                    className="btn-close"
                     data-bs-dismiss="modal"
                     aria-label="Close"
                   ></button>
@@ -129,8 +129,8 @@ const nameValidation = (oneName) => {
         
         )}
 
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" className="form-label">
+        <div className="mb-3">
+          <label htmlFor="exampleFormControlTextarea1" className="form-label">
             Message
           </label>
           <textarea  className="form-control" id="message" rows="3"  onBlur={(e) => messageValidation(e.target.value)}></textarea>
@@ -146,7 +146,7 @@ const nameValidation = (oneName) => {
               <h5 className="modal-title">Required Field</h5>
               <button onClick={() => setMessageModal(false)}
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
@@ -162,12 +162,8 @@ const nameValidation = (oneName) => {
       </div>
     
     )}
-      
-      
-      
-      
-      
-        <button type="button" class="btn btn-info" onClick={submitButton}>
+    
+        <button type="button" className="btn btn-info" onClick={submitButton}>
           Submit
         </button>
       </div>

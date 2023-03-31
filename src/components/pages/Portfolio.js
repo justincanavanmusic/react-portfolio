@@ -1,5 +1,8 @@
 import React from "react";
 import './index.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDesktop } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const projects = [
   {
@@ -40,16 +43,17 @@ export default function Portfolio() {
     <>
       <div className="d-flex flex-row flex-wrap justify-content-evenly">
       {projects.map((oneProject) => (
-          <div id="portfolio-cards" className="card font mb-3 mt-5">
+          <div id="portfolio-cards" className="card font mt-5">
             <div className="card-body">
     
-              <h5 className="card-title">{oneProject.name}</h5>
-           
-              <a href={oneProject.githubRepo} target="_blank" alt="Github Repo">Github Link</a>
-                <br></br>
+              <h5 className="card-title mb-4">{oneProject.name}</h5>
+              <div className="d-flex justify-content-between">
+              <a href={oneProject.githubRepo} target="_blank" alt="Github Repo"><FontAwesomeIcon icon={faGithub} size="2xl" /></a>
+                
               <a href={oneProject.liveLink} target="_blank" alt="Project Live Link">
-                Live Link
+              <FontAwesomeIcon icon={faDesktop} size="2xl" style={{"--fa-secondary-color": "#005cfa",}}/>
               </a>
+              </div>
             </div>
           </div>
              ))}

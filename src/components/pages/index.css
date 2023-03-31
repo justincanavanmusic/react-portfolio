@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Eczar&display=swap');
 
+:root {
+    --teal: 087E8B; 
+}
+
 .font {
     font-family: 'Eczar'
 }
@@ -9,5 +13,8 @@
 }
 
 #portfolio-cards {
-    width: 30vw;
+    width: 28vw;
+    height: 15vh;
+    text-align: left;
+    
 }
