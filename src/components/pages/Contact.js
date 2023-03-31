@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import './index.css'
+import './index.css'
 
 
 const submitButton = (e) => {
@@ -163,10 +163,23 @@ const nameValidation = (oneName) => {
     
     )}
     
-        <button type="button" className="btn btn-info" onClick={submitButton}>
+        <button type="button" className="btn btn-info mb-5" onClick={submitButton}>
           Submit
         </button>
       </div>
+
+      <div className="container" style={font}>
+      <h4>Contact me!</h4>
+      <div className="d-flex justify-content-center" style={font}>
+   
+      <ul class="list-group">
+  <li class="list-group-item">Email:</li>
+  <li class="list-group-item list-group-item-success">justincanavanmusic@gmail.com</li>
+  <li class="list-group-item list-group-item">Phone:</li>
+  <li class="list-group-item list-group-item-success">201-218-8720</li>
+  </ul>
+  </div>
+  </div>
     </>
   );
 }

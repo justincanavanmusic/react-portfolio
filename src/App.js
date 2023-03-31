@@ -6,7 +6,7 @@ const styles = {
   
   header: {
        marginTop: "5vh",
-       marginBottom: "5vh",
+       marginBottom: "3vh",
         fontFamily: 'Eczar'
   },
    paragraph: {
