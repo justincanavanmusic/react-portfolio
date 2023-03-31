@@ -13,9 +13,9 @@ export default function AboutMe({ paragraph, header, font }) {
     return (
         <>
       <h2 style={header} >About Me</h2>
-      <img src={photo} style={style.photo} alt='Justin Canavan headshot' width="200" height="250"></img>
+      <img src={photo} style={style.photo} alt='Justin Canavan headshot' width="200" height="250" className="mb-4"></img>
 
-      <p style={paragraph} > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+      <p style={paragraph} >A passionate, hard-working, full-stack web developer. Developed a strong foundation in teamwork, problem-solving, and time management over the last decade working in a language-based industry (music). Consistently managed tight deadlines and allocated time efficiently in high pressure situations, while simultaneously delivering a high-quality product. Known as a reliable professional who is always pushing to advance their craft. </p>
 
       </>
     )

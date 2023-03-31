@@ -5,13 +5,13 @@ import SiteContainer from "./components/SiteContainer";
 const styles = {
   
   header: {
-       marginTop: "3vh",
-       marginBottom: "2vh",
+       marginTop: "5vh",
+       marginBottom: "5vh",
         fontFamily: 'Eczar'
   },
    paragraph: {
-       marginLeft: "15vw",
-       marginRight: "15vw",
+       marginLeft: "25vw",
+       marginRight: "25vw",
        marginTop: "3vh",
        fontFamily: 'Eczar'
       
