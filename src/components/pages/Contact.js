@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import "./index.css";
 
-const submitButton = (e) => {
-  e.preventDefault();
-  if ("cool" === "cool") {
-    console.log(e.target);
-  }
-};
 
 export default function Contact({ font }) {
   const [name, setName] = useState("");
@@ -15,6 +9,37 @@ export default function Contact({ font }) {
   const [emailModal, setEmailModal] = useState(false);
   const [message, setMessage] = useState("");
   const [messageModal, setMessageModal] = useState(false);
+
+  const nameChange = (e) => {
+    const { value } = e.target;
+    console.log(name)
+    
+    return setName(value) 
+  }
+ 
+  const emailChange = (e) => {
+    const { value } = e.target;
+    // console.log(name)
+    
+    return setEmail(value) 
+  }
+
+  const messageChange = (e) => {
+    const { value } = e.target;
+    // console.log(name)
+    
+    return setMessage(value) 
+  }
+
+  const submitButton = (e) => {
+  e.preventDefault();
+  // console.log('hello')
+
+  setName('');
+  setEmail('');
+  setMessage('');
+
+};
 
   const nameValidation = (oneName) => {
     if (oneName.length > 0) {
@@ -83,7 +108,9 @@ export default function Contact({ font }) {
                 className="form-control"
                 id="name"
                 placeholder="John Doe"
-                defaultValue={name}
+                // defaultValue={name}
+                value={name}
+                onChange={nameChange}
                 onBlur={(e) => nameValidation(e.target.value)}
                 required
               ></input>
@@ -101,7 +128,10 @@ export default function Contact({ font }) {
               <input
                 type="email"
                 className="form-control"
-                defaultValue={email}
+                // defaultValue={email}
+                value={email}
+                onChange={emailChange}
+               
                 onBlur={(e) => validateEmail(e.target.value)}
                 id="email"
                 placeholder="name@example.com"
@@ -121,6 +151,7 @@ export default function Contact({ font }) {
                         <button
                           onClick={() => setEmailModal(false)}
                           type="button"
+                         
                           className="btn-close"
                           data-bs-dismiss="modal"
                           aria-label="Close"
@@ -145,6 +176,8 @@ export default function Contact({ font }) {
               </label>
               <div className='message-input col-lg-10 col-md-10'>
               <textarea
+               onChange={messageChange}
+               value={message}
                 className="form-control"
                 id="message"
                 rows="3"
@@ -164,6 +197,7 @@ export default function Contact({ font }) {
                           onClick={() => setMessageModal(false)}
                           type="button"
                           className="btn-close"
+                      
                           data-bs-dismiss="modal"
                           aria-label="Close"
                         ></button>
