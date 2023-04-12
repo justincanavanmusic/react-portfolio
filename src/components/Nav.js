@@ -1,9 +1,10 @@
 import React from 'react';
 import './Nav.css';
+import '../index.css'
 
-function Nav({ currentPage, changePage, font}) {
+function Nav({ currentPage, changePage }) {
     return (
-        <nav style={font} className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="footer-background footer-font-color navbar navbar-expand-lg navbar-light">
   <div className="container-fluid">
     <a className="navbar-brand" href="#">Justin Canavan</a>
       <ul className="navbar-nav">
@@ -29,7 +30,7 @@ function Nav({ currentPage, changePage, font}) {
           >Contact</a>
         </li>
         <li className="nav-item">
-          <a className={currentPage === 'AboutMe' ? 'nav-link active' : 'nav-link'} href="#Resume" tabIndex="-1" aria-disabled="true"
+          <a className={currentPage === 'Resume' ? 'nav-link active' : 'nav-link'} href="#Resume" tabIndex="-1" aria-disabled="true"
           
           onClick={() => changePage('Resume')}
           
