@@ -41,9 +41,9 @@ const projects = [
 export default function Portfolio() {
   return (
     <>
-      <div className="d-flex flex-row flex-wrap justify-content-evenly">
+      <div className="d-flex flex-row flex-wrap justify-content-evenly footer-font-color">
       {projects.map((oneProject) => (
-          <div id="portfolio-cards" className="card font mt-5">
+          <div id="portfolio-cards" className="card footer-background font mt-5">
             <div className="card-body">
     
               <h5 className="card-title mb-4">{oneProject.name}</h5>

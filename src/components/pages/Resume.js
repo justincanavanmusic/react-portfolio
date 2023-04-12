@@ -15,7 +15,7 @@ let frontEndSkills = [
 ];
 
 let backEndSkills = [
-  "APIs",
+  "API",
   "Node.js",
   "Express.js",
   "MySQL/Sequelize",
