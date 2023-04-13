@@ -49,7 +49,6 @@ const messageForm = [
 { 
   title: 'Email Address',
   name: 'email',
-  // onBlur: '',
   value: 'email',
   placeholder: "name@example.com"
 }
@@ -68,7 +67,6 @@ const inputChange = (e) => {
   [name]: value,
   [email]: value,
   
-  // setUserInput(value)
   }
   })
 }
@@ -97,39 +95,45 @@ const inputChange = (e) => {
 
   const submitButton = (e) => {
   e.preventDefault();
+
   console.log('hello')
+  console.log(userInput);
+  
 
   // setName('');
   // setEmail('');
   // setMessage('');
-
-  
+  // window.location.reload();
+ 
   setUserInput(initialInput)
+  }
+  
 //   setUserInput(() => {
 //   return {
-//     ...userInput,
+
 //   [name]: "",
 //   [email]: ""
 //   }
+//   })
+// };
 
-};
+  const nameValidation = (nameInput) => {
+    console.log(nameInput.length);
+    if (nameInput.length > 0) {
+      setUserInput(nameInput);
+    } else setNameModal(true);
+  };
 
-  // const nameValidation = (oneName) => {
-  //   if (oneName.length > 0) {
-  //     setName(oneName);
-  //   } else setNameModal(true);
-  // };
+  const validateEmail = (input) => {
+    const emailRegex = /^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/;
 
-  // const validateEmail = (input) => {
-  //   const emailRegex = /^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/;
-
-  //   if (input.match(emailRegex)) {
-  //     setEmail(input);
-  //     console.log(input);
-  //   } else {
-  //     setEmailModal(true);
-  //   }
-  // };
+    if (input.match(emailRegex)) {
+      setUserInput(input);
+      console.log(input);
+    } else {
+      setEmailModal(true);
+    }
+  };
 
   const messageValidation = (message) => {
     if (message.length > 0) {
@@ -174,6 +178,7 @@ const inputChange = (e) => {
               <div className='card mb-5 list-items contact-card col-sm-9 col-md-9 col-lg-9'>
                 
             {messageForm.map((oneForm) => (
+              
             <div>
               <label htmlFor="exampleFormControlInput1" className="pt-2 pb-2">
                 {oneForm.title}
@@ -185,9 +190,12 @@ const inputChange = (e) => {
                 className="form-control"
                 placeholder={oneForm.placeholder}
                 // defaultValue={name}
-                // value={{oneForm.value}}
+                value={oneForm.name==='name'  ? name : email}
+
                 onChange={inputChange}
-                // onBlur={(e) => nameValidation(e.target.value)}
+
+               onBlur={(e) => oneForm.name==='name' ? nameValidation(e.target.value) : validateEmail(e.target.value)}
+                
                 required
               ></input>
   
@@ -261,7 +269,7 @@ const inputChange = (e) => {
                 className="form-control"
                 id="message"
                 rows="3"
-                // onBlur={(e) => messageValidation(e.target.value)}
+                onBlur={(e) => messageValidation(e.target.value)}
               ></textarea>
               </div>
             </div>
@@ -293,7 +301,7 @@ const inputChange = (e) => {
             )}
         <div className='col-lg-6 margin-auto d-flex justify-content-center'>
             <button
-              type="button"
+              type="submit"
               className="btn btn-info mt-3 mb-3"
               onClick={submitButton}
             >
