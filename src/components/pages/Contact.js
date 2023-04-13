@@ -5,23 +5,34 @@ import { BsFillTelephoneFill } from 'react-icons/bs'
 import { FaGithub } from 'react-icons/fa'
 
 
-export default function Contact({ font }) {
-  const [name, setName] = useState("");
+export default function Contact() {
+
+  const initialInput = 
+    {
+      name: "",
+      email: "",
+      // message: "",
+  
+    }
+
+  const [userInput, setUserInput] = useState(initialInput);
+
+  const { name, email } = userInput;
+
+  // const [name, setName] = useState("");
   const [nameModal, setNameModal] = useState(false);
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
   const [emailModal, setEmailModal] = useState(false);
   const [message, setMessage] = useState("");
   const [messageModal, setMessageModal] = useState(false);
 
   const contactInfo = [
   { 
-    
     icon: < AiOutlineMail />,
     contact: 'justincanavanmusic@gmail.com',
     href: "mailto:justincanavanmusic@gmail.com",
   },
    { 
-    
     icon: < BsFillTelephoneFill />,
     contact: '201-218-8720',
     href: "tel:2012188720",
@@ -29,22 +40,53 @@ export default function Contact({ font }) {
 ]
 
 const messageForm = [
-  
+ { 
+  title: 'Name',
+  name: 'name',
+  value: 'name',
+  placeholder: 'John Doe'
+},
+{ 
+  title: 'Email Address',
+  name: 'email',
+  // onBlur: '',
+  value: 'email',
+  placeholder: "name@example.com"
+}
+
 ]
 
-  const nameChange = (e) => {
-    const { value } = e.target;
-    console.log(name)
-    
-    return setName(value) 
+const inputChange = (e) => {
+  const { name, email, value } = e.target;
+  // console.log(e.target)
+  console.log(userInput)
+  
+  setUserInput(() => {
+  // return setName(value) 
+  return {
+  ...userInput,
+  [name]: value,
+  [email]: value,
+  
+  // setUserInput(value)
   }
+  })
+}
+
+
+  // const nameChange = (e) => {
+  //   const { value, name } = e.target;
+  //   console.log(e.target)
+    
+  //   return setName(value) 
+  // }
  
-  const emailChange = (e) => {
-    const { value } = e.target;
-    // console.log(name)
+  // const emailChange = (e) => {
+  //   const { value } = e.target;
+  //   // console.log(name)
     
-    return setEmail(value) 
-  }
+  //   return setEmail(value) 
+  // }
 
   const messageChange = (e) => {
     const { value } = e.target;
@@ -55,34 +97,43 @@ const messageForm = [
 
   const submitButton = (e) => {
   e.preventDefault();
-  // console.log('hello')
+  console.log('hello')
 
-  setName('');
-  setEmail('');
-  setMessage('');
+  // setName('');
+  // setEmail('');
+  // setMessage('');
+
+  
+  setUserInput(initialInput)
+//   setUserInput(() => {
+//   return {
+//     ...userInput,
+//   [name]: "",
+//   [email]: ""
+//   }
 
 };
 
-  const nameValidation = (oneName) => {
-    if (oneName.length > 0) {
-      setName(oneName);
-    } else setNameModal(true);
-  };
+  // const nameValidation = (oneName) => {
+  //   if (oneName.length > 0) {
+  //     setName(oneName);
+  //   } else setNameModal(true);
+  // };
 
-  const validateEmail = (input) => {
-    const emailRegex = /^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/;
+  // const validateEmail = (input) => {
+  //   const emailRegex = /^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/;
 
-    if (input.match(emailRegex)) {
-      setEmail(input);
-      console.log(input);
-    } else {
-      setEmailModal(true);
-    }
-  };
+  //   if (input.match(emailRegex)) {
+  //     setEmail(input);
+  //     console.log(input);
+  //   } else {
+  //     setEmailModal(true);
+  //   }
+  // };
 
   const messageValidation = (message) => {
     if (message.length > 0) {
-      setMessage(message);
+      // setMessage(message);
     } else setMessageModal(true);
   };
 
@@ -121,24 +172,30 @@ const messageForm = [
             
               <div className='d-flex justify-content-center'>
               <div className='card mb-5 list-items contact-card col-sm-9 col-md-9 col-lg-9'>
+                
+            {messageForm.map((oneForm) => (
+            <div>
               <label htmlFor="exampleFormControlInput1" className="pt-2 pb-2">
-                Name
+                {oneForm.title}
               </label>
               <div className='message-input col-sm-10 col-lg-10 col-md-10'>
               <input
                 type="text"
+                name={oneForm.name}
                 className="form-control"
-                id="name"
-                placeholder="John Doe"
+                placeholder={oneForm.placeholder}
                 // defaultValue={name}
-                value={name}
-                onChange={nameChange}
-                onBlur={(e) => nameValidation(e.target.value)}
+                // value={{oneForm.value}}
+                onChange={inputChange}
+                // onBlur={(e) => nameValidation(e.target.value)}
                 required
               ></input>
+  
               </div>
+              </div>
+              ))}
             {/* </div> */}
-            <div>
+            {/* <div>
               <label
                 id="email"
                 htmlFor="exampleFormControlInput1"
@@ -149,17 +206,18 @@ const messageForm = [
               <div className='message-input col-lg-10 col-md-10 col-sm-10'>
               <input
                 type="email"
+                name="email"
                 className="form-control"
                 // defaultValue={email}
                 value={email}
-                onChange={emailChange}
+                onChange={inputChange}
                
-                onBlur={(e) => validateEmail(e.target.value)}
+                // onBlur={(e) => validateEmail(e.target.value)}
                 id="email"
                 placeholder="name@example.com"
               ></input>
               </div>
-            </div>
+            </div> */}
 
             {/* modal */}
 
@@ -203,7 +261,7 @@ const messageForm = [
                 className="form-control"
                 id="message"
                 rows="3"
-                onBlur={(e) => messageValidation(e.target.value)}
+                // onBlur={(e) => messageValidation(e.target.value)}
               ></textarea>
               </div>
             </div>
@@ -248,6 +306,13 @@ const messageForm = [
           </div>
 
 
+
+
+
+
+
+
+
           <div className="margin-auto col-sm-12 col-md-6 col-lg-6">
             <h4 className="mb-4 h4-contact mb-5">Contact</h4>
 
@@ -259,7 +324,7 @@ const messageForm = [
             <li className="list-items list-group-item">{oneInfo.icon}</li>
               <a
                 className="pt-2 pb-2 contact-links"
-                href="mailto:justincanavanmusic@gmail.com"
+                href={oneInfo.href}
                 target="_blank"
                 alt="email"
               >
