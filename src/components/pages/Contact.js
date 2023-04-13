@@ -5,27 +5,86 @@ import { BsFillTelephoneFill } from 'react-icons/bs'
 import { FaGithub } from 'react-icons/fa'
 
 
-export default function Contact({ font }) {
-  const [name, setName] = useState("");
+export default function Contact() {
+
+  const initialInput = 
+    {
+      name: "",
+      email: "",
+      // message: "",
+  
+    }
+
+  const [userInput, setUserInput] = useState(initialInput);
+
+  const { name, email } = userInput;
+
+  // const [name, setName] = useState("");
   const [nameModal, setNameModal] = useState(false);
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
   const [emailModal, setEmailModal] = useState(false);
   const [message, setMessage] = useState("");
   const [messageModal, setMessageModal] = useState(false);
 
-  const nameChange = (e) => {
-    const { value } = e.target;
-    console.log(name)
-    
-    return setName(value) 
+  const contactInfo = [
+  { 
+    icon: < AiOutlineMail />,
+    contact: 'justincanavanmusic@gmail.com',
+    href: "mailto:justincanavanmusic@gmail.com",
+  },
+   { 
+    icon: < BsFillTelephoneFill />,
+    contact: '201-218-8720',
+    href: "tel:2012188720",
   }
+]
+
+const messageForm = [
+ { 
+  title: 'Name',
+  name: 'name',
+  value: 'name',
+  placeholder: 'John Doe'
+},
+{ 
+  title: 'Email Address',
+  name: 'email',
+  value: 'email',
+  placeholder: "name@example.com"
+}
+
+]
+
+const inputChange = (e) => {
+  const { name, email, value } = e.target;
+  // console.log(e.target)
+  console.log(userInput)
+  
+  setUserInput(() => {
+  // return setName(value) 
+  return {
+  ...userInput,
+  [name]: value,
+  [email]: value,
+  
+  }
+  })
+}
+
+
+  // const nameChange = (e) => {
+  //   const { value, name } = e.target;
+  //   console.log(e.target)
+    
+  //   return setName(value) 
+  // }
  
-  const emailChange = (e) => {
-    const { value } = e.target;
-    // console.log(name)
+  // const emailChange = (e) => {
+  //   const { value } = e.target;
+  //   // console.log(name)
     
-    return setEmail(value) 
-  }
+  //   return setEmail(value) 
+  // }
 
   const messageChange = (e) => {
     const { value } = e.target;
@@ -36,17 +95,32 @@ export default function Contact({ font }) {
 
   const submitButton = (e) => {
   e.preventDefault();
-  // console.log('hello')
 
-  setName('');
-  setEmail('');
-  setMessage('');
+  console.log('hello')
+  console.log(userInput);
+  
 
-};
+  // setName('');
+  // setEmail('');
+  // setMessage('');
+  // window.location.reload();
+ 
+  setUserInput(initialInput)
+  }
+  
+//   setUserInput(() => {
+//   return {
 
-  const nameValidation = (oneName) => {
-    if (oneName.length > 0) {
-      setName(oneName);
+//   [name]: "",
+//   [email]: ""
+//   }
+//   })
+// };
+
+  const nameValidation = (nameInput) => {
+    console.log(nameInput.length);
+    if (nameInput.length > 0) {
+      setUserInput(nameInput);
     } else setNameModal(true);
   };
 
@@ -54,7 +128,7 @@ export default function Contact({ font }) {
     const emailRegex = /^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/;
 
     if (input.match(emailRegex)) {
-      setEmail(input);
+      setUserInput(input);
       console.log(input);
     } else {
       setEmailModal(true);
@@ -63,7 +137,7 @@ export default function Contact({ font }) {
 
   const messageValidation = (message) => {
     if (message.length > 0) {
-      setMessage(message);
+      // setMessage(message);
     } else setMessageModal(true);
   };
 
@@ -102,24 +176,34 @@ export default function Contact({ font }) {
             
               <div className='d-flex justify-content-center'>
               <div className='card mb-5 list-items contact-card col-sm-9 col-md-9 col-lg-9'>
+                
+            {messageForm.map((oneForm) => (
+              
+            <div>
               <label htmlFor="exampleFormControlInput1" className="pt-2 pb-2">
-                Name
+                {oneForm.title}
               </label>
               <div className='message-input col-sm-10 col-lg-10 col-md-10'>
               <input
                 type="text"
+                name={oneForm.name}
                 className="form-control"
-                id="name"
-                placeholder="John Doe"
+                placeholder={oneForm.placeholder}
                 // defaultValue={name}
-                value={name}
-                onChange={nameChange}
-                onBlur={(e) => nameValidation(e.target.value)}
+                value={oneForm.name==='name'  ? name : email}
+
+                onChange={inputChange}
+
+               onBlur={(e) => oneForm.name==='name' ? nameValidation(e.target.value) : validateEmail(e.target.value)}
+                
                 required
               ></input>
+  
               </div>
+              </div>
+              ))}
             {/* </div> */}
-            <div>
+            {/* <div>
               <label
                 id="email"
                 htmlFor="exampleFormControlInput1"
@@ -130,17 +214,18 @@ export default function Contact({ font }) {
               <div className='message-input col-lg-10 col-md-10 col-sm-10'>
               <input
                 type="email"
+                name="email"
                 className="form-control"
                 // defaultValue={email}
                 value={email}
-                onChange={emailChange}
+                onChange={inputChange}
                
-                onBlur={(e) => validateEmail(e.target.value)}
+                // onBlur={(e) => validateEmail(e.target.value)}
                 id="email"
                 placeholder="name@example.com"
               ></input>
               </div>
-            </div>
+            </div> */}
 
             {/* modal */}
 
@@ -216,7 +301,7 @@ export default function Contact({ font }) {
             )}
         <div className='col-lg-6 margin-auto d-flex justify-content-center'>
             <button
-              type="button"
+              type="submit"
               className="btn btn-info mt-3 mb-3"
               onClick={submitButton}
             >
@@ -228,50 +313,49 @@ export default function Contact({ font }) {
           </div>
           </div>
 
-          {/* <div className="mb-5"> */}
-          {/* <div className='container'> */}
+
+
+
+
+
+
+
 
           <div className="margin-auto col-sm-12 col-md-6 col-lg-6">
             <h4 className="mb-4 h4-contact mb-5">Contact</h4>
 
-            
+           
             <div className="card contact-card col-lg-9 col-md-9 col-sm-12">
-         
-
+            {contactInfo.map((oneInfo) => (
             <ul className="list-group">
-              <li className="list-items list-group-item"> < AiOutlineMail className='react-icons' /></li>
+
+            <li className="list-items list-group-item">{oneInfo.icon}</li>
               <a
                 className="pt-2 pb-2 contact-links"
-                href="mailto:justincanavanmusic@gmail.com"
+                href={oneInfo.href}
                 target="_blank"
                 alt="email"
               >
-                justincanavanmusic@gmail.com
-              </a>
-              <li className="list-items list-group-item">< BsFillTelephoneFill className='react-icons' /></li>
-              <a
-                className= "pt-2 pb-2 contact-links"
-                href="tel:2012188720"
-                target="_blank"
-                alt="phone"
-              >
-                201-218-8720
-              </a>
-              {/* <li className="list-items list-group-item">Github</li> */}
-              
-              <a
-                className="pt-2 pb-2 list-items"
-                href="https://github.com/justincanavanmusic"
-                target="_blank"
-                alt="github"
-              >
-                <FaGithub className='react-icons'/>
+                {oneInfo.contact}
               </a>
            
-            </ul>
-            
+            </ul> 
+            ))}
+               <a
+               className="pt-2 pb-2 list-items"
+               href="https://github.com/justincanavanmusic"
+               target="_blank"
+               alt="github"
+             >
+               <FaGithub className='react-icons'/>
+             </a>
           </div>
+              
+                  
+              
+           
         </div>
+    
         </div>
         </div>
 
