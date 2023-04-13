@@ -13,6 +13,25 @@ export default function Contact({ font }) {
   const [message, setMessage] = useState("");
   const [messageModal, setMessageModal] = useState(false);
 
+  const contactInfo = [
+  { 
+    
+    icon: < AiOutlineMail />,
+    contact: 'justincanavanmusic@gmail.com',
+    href: "mailto:justincanavanmusic@gmail.com",
+  },
+   { 
+    
+    icon: < BsFillTelephoneFill />,
+    contact: '201-218-8720',
+    href: "tel:2012188720",
+  }
+]
+
+const messageForm = [
+  
+]
+
   const nameChange = (e) => {
     const { value } = e.target;
     console.log(name)
@@ -228,50 +247,42 @@ export default function Contact({ font }) {
           </div>
           </div>
 
-          {/* <div className="mb-5"> */}
-          {/* <div className='container'> */}
 
           <div className="margin-auto col-sm-12 col-md-6 col-lg-6">
             <h4 className="mb-4 h4-contact mb-5">Contact</h4>
 
-            
+           
             <div className="card contact-card col-lg-9 col-md-9 col-sm-12">
-         
-
+            {contactInfo.map((oneInfo) => (
             <ul className="list-group">
-              <li className="list-items list-group-item"> < AiOutlineMail className='react-icons' /></li>
+
+            <li className="list-items list-group-item">{oneInfo.icon}</li>
               <a
                 className="pt-2 pb-2 contact-links"
                 href="mailto:justincanavanmusic@gmail.com"
                 target="_blank"
                 alt="email"
               >
-                justincanavanmusic@gmail.com
-              </a>
-              <li className="list-items list-group-item">< BsFillTelephoneFill className='react-icons' /></li>
-              <a
-                className= "pt-2 pb-2 contact-links"
-                href="tel:2012188720"
-                target="_blank"
-                alt="phone"
-              >
-                201-218-8720
-              </a>
-              {/* <li className="list-items list-group-item">Github</li> */}
-              
-              <a
-                className="pt-2 pb-2 list-items"
-                href="https://github.com/justincanavanmusic"
-                target="_blank"
-                alt="github"
-              >
-                <FaGithub className='react-icons'/>
+                {oneInfo.contact}
               </a>
            
-            </ul>
-            
+            </ul> 
+            ))}
+               <a
+               className="pt-2 pb-2 list-items"
+               href="https://github.com/justincanavanmusic"
+               target="_blank"
+               alt="github"
+             >
+               <FaGithub className='react-icons'/>
+             </a>
           </div>
+              
+                  
+              
+           
         </div>
+    
         </div>
         </div>
 
