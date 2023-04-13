@@ -10,9 +10,7 @@ export default function Contact() {
   const initialInput = 
     {
       name: "",
-      email: "",
-      // message: "",
-  
+      email: ""
     }
 
   const [userInput, setUserInput] = useState(initialInput);
@@ -43,13 +41,13 @@ const messageForm = [
  { 
   title: 'Name',
   name: 'name',
-  value: 'name',
+  // value: 'name',
   placeholder: 'John Doe'
 },
 { 
   title: 'Email Address',
   name: 'email',
-  value: 'email',
+  // value: 'email',
   placeholder: "name@example.com"
 }
 
@@ -61,7 +59,7 @@ const inputChange = (e) => {
   console.log(userInput)
   
   setUserInput(() => {
-  // return setName(value) 
+
   return {
   ...userInput,
   [name]: value,
@@ -70,21 +68,6 @@ const inputChange = (e) => {
   }
   })
 }
-
-
-  // const nameChange = (e) => {
-  //   const { value, name } = e.target;
-  //   console.log(e.target)
-    
-  //   return setName(value) 
-  // }
- 
-  // const emailChange = (e) => {
-  //   const { value } = e.target;
-  //   // console.log(name)
-    
-  //   return setEmail(value) 
-  // }
 
   const messageChange = (e) => {
     const { value } = e.target;
@@ -98,25 +81,10 @@ const inputChange = (e) => {
 
   console.log('hello')
   console.log(userInput);
-  
-
-  // setName('');
-  // setEmail('');
-  // setMessage('');
-  // window.location.reload();
  
   setUserInput(initialInput)
   }
   
-//   setUserInput(() => {
-//   return {
-
-//   [name]: "",
-//   [email]: ""
-//   }
-//   })
-// };
-
   const nameValidation = (nameInput) => {
     console.log(nameInput.length);
     if (nameInput.length > 0) {
@@ -137,7 +105,7 @@ const inputChange = (e) => {
 
   const messageValidation = (message) => {
     if (message.length > 0) {
-      // setMessage(message);
+      setMessage(message);
     } else setMessageModal(true);
   };
 
@@ -171,7 +139,6 @@ const inputChange = (e) => {
       <div className="container col-12 text-center mt-5 ">
         <div className="row">
           <div className="col-sm-12 col-md-6 col-lg-6">
-            {/* <div className="mb-3"> */}
               <h4 className='h4-contact mb-5'>Send me a message!</h4>
             
               <div className='d-flex justify-content-center'>
@@ -189,7 +156,6 @@ const inputChange = (e) => {
                 name={oneForm.name}
                 className="form-control"
                 placeholder={oneForm.placeholder}
-                // defaultValue={name}
                 value={oneForm.name==='name'  ? name : email}
 
                 onChange={inputChange}
@@ -202,32 +168,6 @@ const inputChange = (e) => {
               </div>
               </div>
               ))}
-            {/* </div> */}
-            {/* <div>
-              <label
-                id="email"
-                htmlFor="exampleFormControlInput1"
-                className="pt-2 pb-2 list-items"
-              >
-                Email address
-              </label>
-              <div className='message-input col-lg-10 col-md-10 col-sm-10'>
-              <input
-                type="email"
-                name="email"
-                className="form-control"
-                // defaultValue={email}
-                value={email}
-                onChange={inputChange}
-               
-                // onBlur={(e) => validateEmail(e.target.value)}
-                id="email"
-                placeholder="name@example.com"
-              ></input>
-              </div>
-            </div> */}
-
-            {/* modal */}
 
             {emailModal && (
               <div id="modal-display" className="black-font modal m-3 p-3">
@@ -254,7 +194,7 @@ const inputChange = (e) => {
                 </div>
               </div>
             )}
-            {/* <div className='container'></div> */}
+           
             <div>
               <label
                 htmlFor="exampleFormControlTextarea1"
@@ -270,6 +210,8 @@ const inputChange = (e) => {
                 id="message"
                 rows="3"
                 onBlur={(e) => messageValidation(e.target.value)}
+
+                required
               ></textarea>
               </div>
             </div>
@@ -313,30 +255,21 @@ const inputChange = (e) => {
           </div>
           </div>
 
-
-
-
-
-
-
-
-
           <div className="margin-auto col-sm-12 col-md-6 col-lg-6">
             <h4 className="mb-4 h4-contact mb-5">Contact</h4>
 
-           
             <div className="card contact-card col-lg-9 col-md-9 col-sm-12">
-            {contactInfo.map((oneInfo) => (
+            {contactInfo.map((infoArray) => (
             <ul className="list-group">
 
-            <li className="list-items list-group-item">{oneInfo.icon}</li>
+            <li className="list-items list-group-item">{infoArray.icon}</li>
               <a
                 className="pt-2 pb-2 contact-links"
-                href={oneInfo.href}
+                href={infoArray.href}
                 target="_blank"
                 alt="email"
               >
-                {oneInfo.contact}
+                {infoArray.contact}
               </a>
            
             </ul> 
@@ -351,9 +284,6 @@ const inputChange = (e) => {
              </a>
           </div>
               
-                  
-              
-           
         </div>
     
         </div>

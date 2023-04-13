@@ -6,6 +6,11 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const projects = [
   {
+    name: "Gamer's Circuit",
+    githubRepo: "https://github.com/justincanavanmusic/electronics-e-commerce",
+    liveLink:  "https://shielded-basin-55972.herokuapp.com/",
+  },
+  {
     name: "Music Dashboard",
     githubRepo:  "https://github.com/justincanavanmusic/music-dashboard",
     liveLink:  "https://justincanavanmusic.github.io/music-dashboard/",
@@ -21,20 +26,15 @@ const projects = [
     liveLink:     "https://floating-fortress-15177.herokuapp.com/",
   },
   {
-    name: "Note Taker",
-    githubRepo:  "https://github.com/justincanavanmusic/note-taker",
-    liveLink:     "https://whispering-beach-30284.herokuapp.com/",
+    name: "Social Network",
+    githubRepo:  "https://github.com/justincanavanmusic/social-network",
+    liveLink:     "https://drive.google.com/file/d/1nRsv6q8O5oznPrG5Xtk0P9ir9OleHZzF/view",
   },
   {
     name: "E-Commerce",
     githubRepo:  "https://github.com/justincanavanmusic/e-commerce",
     liveLink:     "https://drive.google.com/file/d/15MhGYxOhOXy701-hpVT0WT51Khw79zJt/view",
-  },
-  {
-    name: "SVG Logo Maker",
-    githubRepo:  "https://github.com/justincanavanmusic/svg-logo-maker",
-    liveLink:     "https://drive.google.com/file/d/1R2JbRVDBKh-ebA42rOFa2huIgIDQeWPf/view?usp=share_link",
-  },
+  }
  
 ]
 

@@ -5,7 +5,7 @@ import "../index.css";
 function Nav({ currentPage, changePage }) {
   return (
     <nav className="footer-background footer-font-color navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
+      <div className="container-fluid dropdown">
         <a className="navbar-brand" href="/">
           Justin Canavan
         </a>
