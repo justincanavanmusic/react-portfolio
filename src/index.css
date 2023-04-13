@@ -4,8 +4,6 @@
   --color3: #748cab;
   --color4: #f0ebd8;;
   --color5: #0d1321;
-
-
 }
 
 body {
@@ -26,14 +24,15 @@ code {
 }
 
 .about-me-container {
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* justify-content: space; */
 }
-
-
+.page-container {
+  min-height: 100vh;
+}
 
 .headshot {
     margin-top: 2vh;
@@ -59,6 +58,7 @@ code {
 .h4-contact {
   color: var(--color4) !important;
 }
+
 
 .bio {
   font-size: 2.1vh;
@@ -87,7 +87,9 @@ code {
 }
 
 .btm-footer {
-  margin-bottom: auto !important;  
+  margin-bottom: auto !important; 
+  margin-top: 90px; 
+  
 }
 
 .react-icons {

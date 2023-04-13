@@ -136,7 +136,7 @@ const inputChange = (e) => {
         </div>
       )}
 
-      <div className="container col-12 text-center mt-5 ">
+      <div className="container page-container col-12 text-center mt-5 ">
         <div className="row">
           <div className="col-sm-12 col-md-6 col-lg-6">
               <h4 className='h4-contact mb-5'>Send me a message!</h4>

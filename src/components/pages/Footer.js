@@ -7,8 +7,8 @@ import './index.css'
 function Footer() {
     return (
        <>
-       <div className='container footer-background'>
-   <div className="fixed-bottom btm-footer d-flex footer-font-color">
+       <div className='container btm-footer footer-background'>
+   <div className="fixed-bottom d-flex footer-font-color">
    <div className="card col-6 footer-background">
   <div className="card-body ">
     <p className="card-title">Github</p>
@@ -22,6 +22,7 @@ function Footer() {
     <a href="https://www.linkedin.com/in/justin-canavan510/" target= "_blank" className="card-text"><FontAwesomeIcon icon={faLinkedin} size="2xl" /></a>
   </div>
 </div>
+
 {/* <div className="card col-4 footer-background">
   <div className="card-body">
     <p className="card-title">Stack Overflow</p>

@@ -9,6 +9,7 @@ function Nav({ currentPage, changePage }) {
         <a className="navbar-brand" href="/">
           Justin Canavan
         </a>
+ 
         <button
           className="navbar-toggler"
           type="button"
@@ -18,8 +19,9 @@ function Nav({ currentPage, changePage }) {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon nav-btn"></span>
         </button>
+   
         <div className="collapse navbar-collapse show" id="navbarNavAltMarkup">
           <ul className="navbar-nav">
             <li className="nav-item">
