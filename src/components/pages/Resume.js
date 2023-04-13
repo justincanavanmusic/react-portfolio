@@ -9,9 +9,12 @@ let frontEndSkills = [
   "Javascript",
   "React",
   "JQuery",
+  "Handlebars.js",
+  "Webpack",
   "CSS",
-  "HTML",
   "Bootstrap",
+  "HTML",
+  
 ];
 
 let backEndSkills = [
@@ -20,7 +23,8 @@ let backEndSkills = [
   "Express.js",
   "MySQL/Sequelize",
   "MongoDB/Mongoose",
-  "REST",
+  "ORM",
+  "REST"
 ];
 
 export default function Resume() {
@@ -29,23 +33,23 @@ export default function Resume() {
       <div className="d-flex flex-row justify-content-evenly mb-3 mt-4 font">
         
       <div className="d-flex p-2">
-        <div className='.d-block'>
+        <div className='d-block'>
       <h4 className="mb-4">Front End Proficiencies</h4>
       <ul className="list-group">
        
             {frontEndSkills.map((oneSkill) => (
-              <li className="list-group-item">{oneSkill}</li>
+              <li className="list-items list-group-item">{oneSkill}</li>
             ))}
              </ul>
           </div>
         </div> 
 
       <div className="d-flex p-2">
-      <div className='.d-block'>
+      <div className='d-block'>
       <h4 className="mb-4">Back End Proficiencies</h4>
         <ul className="list-group">
           {backEndSkills.map((oneSkill) => (
-            <li className="list-group-item">{oneSkill}</li>
+            <li className="list-group-item list-items">{oneSkill}</li>
           ))}
         </ul >
       </div>

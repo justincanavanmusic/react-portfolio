@@ -5,6 +5,7 @@
   --color4: #f0ebd8;;
   --color5: #0d1321;
 
+
 }
 
 body {
@@ -20,6 +21,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.black-font {
+  color: black;
+}
 
 .about-me-container {
   min-height: 90vh;
@@ -28,6 +32,8 @@ code {
   align-items: center;
   /* justify-content: space; */
 }
+
+
 
 .headshot {
     margin-top: 2vh;
@@ -71,7 +77,7 @@ code {
   background-color: var(--color1);
   color: white;
 }
-.submit-btn {
+.margin-auto {
   margin: 0 auto;
 
 }
@@ -83,10 +89,11 @@ code {
 .btm-footer {
   margin-bottom: auto !important;  
 }
-/* .icon-color {
-  color: var(--color1) !important;
 
-} */
+.react-icons {
+  font-size: larger;
+}
+
 
 
 

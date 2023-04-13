@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./index.css";
+import { AiOutlineMail } from 'react-icons/ai';
+import { BsFillTelephoneFill } from 'react-icons/bs'
+import { FaGithub } from 'react-icons/fa'
 
 
 export default function Contact({ font }) {
@@ -67,7 +70,7 @@ export default function Contact({ font }) {
   return (
     <>
       {nameModal && (
-        <div id="modal-display" className="page-vh modal m-3 p-3">
+        <div id="modal-display" className="black-font page-vh modal m-3 p-3">
           <div tabIndex="-1">
             <div className="modal-dialog">
               <div className="modal-content">
@@ -98,11 +101,11 @@ export default function Contact({ font }) {
               <h4 className='h4-contact mb-5'>Send me a message!</h4>
             
               <div className='d-flex justify-content-center'>
-              <div className='card list-items contact-card col-md-9 col-lg-9'>
+              <div className='card mb-5 list-items contact-card col-sm-9 col-md-9 col-lg-9'>
               <label htmlFor="exampleFormControlInput1" className="pt-2 pb-2">
                 Name
               </label>
-              <div className='message-input col-lg-10 col-md-10'>
+              <div className='message-input col-sm-10 col-lg-10 col-md-10'>
               <input
                 type="text"
                 className="form-control"
@@ -124,7 +127,7 @@ export default function Contact({ font }) {
               >
                 Email address
               </label>
-              <div className='message-input col-lg-10 col-md-10'>
+              <div className='message-input col-lg-10 col-md-10 col-sm-10'>
               <input
                 type="email"
                 className="form-control"
@@ -142,7 +145,7 @@ export default function Contact({ font }) {
             {/* modal */}
 
             {emailModal && (
-              <div id="modal-display" className="modal m-3 p-3">
+              <div id="modal-display" className="black-font modal m-3 p-3">
                 <div tabIndex="-1">
                   <div className="modal-dialog">
                     <div className="modal-content">
@@ -174,7 +177,7 @@ export default function Contact({ font }) {
               >
                 Message
               </label>
-              <div className='message-input col-lg-10 col-md-10'>
+              <div className='message-input col-lg-10 col-md-10 col-sm-10'>
               <textarea
                onChange={messageChange}
                value={message}
@@ -211,7 +214,7 @@ export default function Contact({ font }) {
                 </div>
               </div>
             )}
-        <div className='col-lg-6 submit-btn d-flex justify-content-center'>
+        <div className='col-lg-6 margin-auto d-flex justify-content-center'>
             <button
               type="button"
               className="btn btn-info mt-3 mb-3"
@@ -228,15 +231,15 @@ export default function Contact({ font }) {
           {/* <div className="mb-5"> */}
           {/* <div className='container'> */}
 
-          <div className="col-sm-12 col-md-6 col-lg-6">
+          <div className="margin-auto col-sm-12 col-md-6 col-lg-6">
             <h4 className="mb-4 h4-contact mb-5">Contact</h4>
 
             
-            <div className="card contact-card col-lg-8 col-md-6">
+            <div className="card contact-card col-lg-9 col-md-9 col-sm-12">
          
 
             <ul className="list-group">
-              <li className="list-items list-group-item">Email</li>
+              <li className="list-items list-group-item"> < AiOutlineMail className='react-icons' /></li>
               <a
                 className="pt-2 pb-2 contact-links"
                 href="mailto:justincanavanmusic@gmail.com"
@@ -245,7 +248,7 @@ export default function Contact({ font }) {
               >
                 justincanavanmusic@gmail.com
               </a>
-              <li className="list-items list-group-item">Phone</li>
+              <li className="list-items list-group-item">< BsFillTelephoneFill className='react-icons' /></li>
               <a
                 className= "pt-2 pb-2 contact-links"
                 href="tel:2012188720"
@@ -254,17 +257,17 @@ export default function Contact({ font }) {
               >
                 201-218-8720
               </a>
-              <li className="list-items list-group-item">Github</li>
+              {/* <li className="list-items list-group-item">Github</li> */}
               
               <a
-                className="pt-2 pb-2 contact-links"
+                className="pt-2 pb-2 list-items"
                 href="https://github.com/justincanavanmusic"
                 target="_blank"
                 alt="github"
               >
-               Check out my Github!
+                <FaGithub className='react-icons'/>
               </a>
-              <li className="list-items list-group-item">something here</li>
+           
             </ul>
             
           </div>
