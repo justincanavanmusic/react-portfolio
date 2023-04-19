@@ -1,8 +1,8 @@
 :root {
-  --color1: #1d2d44;
-  --color2: #3e5c76;
-  --color3: #748cab;
-  --color4: #f0ebd8;;
+  --darkBlue: #1d2d44;
+  --medBlue: #3e5c76;
+  --lightBlue: #748cab;
+  --cream: #f0ebd8;;
   --color5: #0d1321;
 }
 
@@ -25,70 +25,115 @@ code {
 
 .about-me-container {
   min-height: 100vh;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
   /* justify-content: space; */
 }
 .page-container {
   min-height: 100vh;
 }
 
+.list-dots {
+  list-style-type: none;
+}
+
+.med-blue-background {
+  background-color: var(--medBlue);
+}
+
 .headshot {
     margin-top: 2vh;
-    margin-bottom: 5vh;
+    /* margin-bottom: 5vh; */
+    height: 40vh;
+    width: auto;
 }
 .list-items {
-  background-color: var(--color4) !important;
-  color: var(--color1) !important;
+  background-color: var(--cream) !important;
+  color: var(--darkBlue) !important;
 }
 
 .about-me {
   margin-top: 5vh;
 }
 .contact-links {
-  text-decoration: none;
-  color: var(--color4);
-  background-color: var(--color2)
+  text-decoration: none !important;
+  color: var(--cream);
+  background-color: var(--medBlue)
 }
+
+.contact-links:hover {
+   opacity: .70;
+   color: var(--cream) !important;
+   background-color: var(--lightBlue) !important;
+} 
+
+/* a:hover {
+  background-color: var(--cream);
+   opacity: .75;
+} */
+
 .contact-card {
   margin: 0 auto;
   border: 0 !important; 
 }
-.h4-contact {
-  color: var(--color4) !important;
+.cream-font {
+  color: var(--cream) !important;
 }
 
+/* .bio {
+  /* font-size: 2.1vh; */
+  /* margin-left: 20vw;
+  margin-right: 20vw; */
+/* } */
 
-.bio {
-  font-size: 2.1vh;
-  margin-left: 20vw;
-  margin-right: 20vw;
-}
-
-.footer-font-color {
-  color: var(--color1) !important;
+.dark-blue-font {
+  color: var(--darkBlue) !important;
 }
 .message-input {
   margin: 0 auto;
 }
 
 .color-scheme {
-  background-color: var(--color1);
-  color: white;
+  background-color: var(--darkBlue);
+  color: var(--cream);
 }
+
+.resume-margin {
+  margin-top: 10vh;
+}
+
 .margin-auto {
   margin: 0 auto;
-
+}
+.icon-color {
+  color: var(--medBlue) !important;
+}
+.icon-color:hover {
+  
+    opacity: .90;
+    color: var(--lightBlue) !important;
+    /* background-color: var(--lightBlue) !important; */
 }
 
+.no-radius {
+  border-top-left-radius: none !important;
+  border-top-right-radius: none !important;
+}
+
+
+
+
+
+
+
 .footer-background {
-  background-color: var(--color4) !important;
+  background-color: var(--cream) !important;
 }
 
 .btm-footer {
   margin-bottom: auto !important; 
-  margin-top: 90px; 
+  margin-top: 60px; 
   
 }
 

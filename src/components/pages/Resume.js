@@ -27,10 +27,16 @@ let backEndSkills = [
   "REST"
 ];
 
+let fullStackSkills = [
+  "OOP",
+  "MERN",
+  "MVC"
+]
+
 export default function Resume() {
   return (
     <>
-      <div className="d-flex flex-row justify-content-evenly mb-3 mt-4 font">
+      <div className="page-container d-flex flex-row justify-content-evenly mb-3 mt-4 font">
         
       <div className="d-flex p-2">
         <div className='d-block'>
@@ -43,6 +49,29 @@ export default function Resume() {
              </ul>
           </div>
         </div> 
+        
+        <div className="d-flex p-2">
+          <div className='d-block'>
+        <h4 className="mb-4">Full-Stack Proficiencies</h4>
+        <ul className="list-group">
+         
+              {fullStackSkills.map((oneSkill) => (
+                <li className="list-items list-group-item">{oneSkill}</li>
+              ))}
+               </ul>
+               <div className='container'>
+      <div className="d-flex mb-5 justify-content-center">
+        <div className="mb-5">
+        <h5 className="font resume-margin mb-4">Download my resume with the icon below!</h5>
+      <a href={resume} download="justin-canavan-resume.pdf" className="font">
+      <FontAwesomeIcon icon={faArrowUpFromBracket} size="2xl" />
+      </a>
+      <br></br>
+      </div>
+      </div>
+      </div>
+            </div>
+          </div> 
 
       <div className="d-flex p-2">
       <div className='d-block'>
@@ -55,22 +84,6 @@ export default function Resume() {
       </div>
       </div>
       </div>
-
-      <div className='container'>
-      <div className="d-flex mb-5 justify-content-center">
-        <div className="mt-5 mb-5">
-        <h5 className="font mb-4">Download my resume with the icon below!</h5>
-      <a href={resume} download="justin-canavan-resume.pdf" className="font">
-      <FontAwesomeIcon icon={faArrowUpFromBracket} size="2xl" />
-      </a>
-      <br></br>
-      </div>
-      </div>
-      </div>
-   
-      
-      
-
     </>
   );
 }

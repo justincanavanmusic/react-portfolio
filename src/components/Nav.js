@@ -22,7 +22,7 @@ function Nav({ currentPage, changePage }) {
           <span className="navbar-toggler-icon nav-btn"></span>
         </button>
    
-        <div className="collapse navbar-collapse show" id="navbarNavAltMarkup">
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <ul className="navbar-nav">
             <li className="nav-item">
               <a
