@@ -41,23 +41,29 @@ const projects = [
 export default function Portfolio() {
   return (
     <>
-      <div className="d-flex flex-row flex-wrap justify-content-evenly footer-font-color">
+    <div className='container page-container'>
+    <div className='row'>
+    
       {projects.map((oneProject) => (
-          <div id="portfolio-cards" className="card footer-background font mt-5">
+          <div className='col-9 col-sm-9 col-md-4 col-lg-4 contact-card'>
+          <div className="card footer-background dark-blue-font mt-5">
             <div className="card-body">
     
-              <h5 className="card-title mb-4">{oneProject.name}</h5>
+              <h5 className="card-title text-start mb-4">{oneProject.name}</h5>
               <div className="d-flex justify-content-between">
-              <a href={oneProject.githubRepo} target="_blank" alt="Github Repo"><FontAwesomeIcon icon={faGithub} size="2xl" /></a>
+              <a href={oneProject.githubRepo} target="_blank" alt="Github Repo"><FontAwesomeIcon icon={faGithub} className='icon-color' size="2xl" /></a>
                 
               <a href={oneProject.liveLink} target="_blank" alt="Project Live Link">
-              <FontAwesomeIcon icon={faDesktop} size="2xl" style={{"--fa-secondary-color": "#005cfa",}}/>
+              <FontAwesomeIcon icon={faDesktop} size="2xl" className='icon-color'/>
               </a>
               </div>
             </div>
           </div>
+          </div>
              ))}
       
+
+      </div>
       </div>
     </>
   );
