@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-portfolio/static/css/main.34f2bcd4.css",
-    "main.js": "/react-portfolio/static/js/main.32c15bda.js",
+    "main.css": "/react-portfolio/static/css/main.967218e4.css",
+    "main.js": "/react-portfolio/static/js/main.82157b29.js",
     "static/media/Screenshot 2023-03-28 at 5.44.08 PM.png": "/react-portfolio/static/media/Screenshot 2023-03-28 at 5.44.08 PM.76b516dea21ead2c0038.png",
     "static/media/justin-canavan-resume.pdf": "/react-portfolio/static/media/justin-canavan-resume.d8bb739179a6274828c5.pdf",
     "index.html": "/react-portfolio/index.html",
-    "main.34f2bcd4.css.map": "/react-portfolio/static/css/main.34f2bcd4.css.map",
-    "main.32c15bda.js.map": "/react-portfolio/static/js/main.32c15bda.js.map"
+    "main.967218e4.css.map": "/react-portfolio/static/css/main.967218e4.css.map",
+    "main.82157b29.js.map": "/react-portfolio/static/js/main.82157b29.js.map"
   },
   "entrypoints": [
-    "static/css/main.34f2bcd4.css",
-    "static/js/main.32c15bda.js"
+    "static/css/main.967218e4.css",
+    "static/js/main.82157b29.js"
   ]
 }
