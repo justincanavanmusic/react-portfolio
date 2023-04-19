@@ -11,15 +11,16 @@ const projects = [
     liveLink:  "https://shielded-basin-55972.herokuapp.com/",
   },
   {
-    name: "Music Dashboard",
-    githubRepo:  "https://github.com/justincanavanmusic/music-dashboard",
-    liveLink:  "https://justincanavanmusic.github.io/music-dashboard/",
-  },
-  {
     name: "Chicago Hotspot",
     githubRepo:  "https://github.com/allisonnault/Chicago-Attractions",
     liveLink:   "https://ancient-wildwood-93900.herokuapp.com/",
   },
+  {
+    name: "Music Dashboard",
+    githubRepo:  "https://github.com/justincanavanmusic/music-dashboard",
+    liveLink:  "https://justincanavanmusic.github.io/music-dashboard/",
+  },
+
   {
     name: "Tech Blog",
     githubRepo:  "https://github.com/justincanavanmusic/tech-blog",

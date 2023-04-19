@@ -29,6 +29,7 @@ code {
   flex-direction: column;
   align-items: center; */
   /* justify-content: space; */
+ 
 }
 .page-container {
   min-height: 100vh;
@@ -81,11 +82,11 @@ code {
   color: var(--cream) !important;
 }
 
-/* .bio {
-  /* font-size: 2.1vh; */
-  /* margin-left: 20vw;
-  margin-right: 20vw; */
-/* } */
+.bio {
+  /* font-size: 2.45vh; */
+  font-size: 1.5rem;
+  padding-bottom: 5vh;
+}
 
 .dark-blue-font {
   color: var(--darkBlue) !important;
@@ -120,12 +121,6 @@ code {
   border-top-left-radius: none !important;
   border-top-right-radius: none !important;
 }
-
-
-
-
-
-
 
 .footer-background {
   background-color: var(--cream) !important;
