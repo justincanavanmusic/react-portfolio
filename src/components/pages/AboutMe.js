@@ -13,7 +13,7 @@ export default function AboutMe() {
   
     return (
         <>
-      <div className='container about-me-container'>
+      <div className='container pb-5 about-me-container'>
 
      
       <h2 className='cream-font about-me'>About Me</h2>

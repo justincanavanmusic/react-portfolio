@@ -133,7 +133,7 @@ export default function Contact() {
             <hr className="w-50 mb-4 mx-auto opacity-75"></hr>
 
             <div className="d-flex justify-content-center">
-              <div className="card mb-5 list-items contact-card col-12 col-sm-12 col-md-10 col-lg-10">
+              <div className="card mb-5 list-items contact-card col-10 col-sm-10 col-md-10 col-lg-10">
                 {messageForm.map((oneForm) => (
                   <div>
                     <label
@@ -142,7 +142,7 @@ export default function Contact() {
                     >
                       {oneForm.title}
                     </label>
-                    <div className="message-input col-sm-10 col-lg-10 col-md-10">
+                    <div className="message-input col-sm-10 col-lg-10 col-md-10 col-10">
                       <input
                         type="text"
                         name={oneForm.name}
@@ -193,7 +193,7 @@ export default function Contact() {
                   >
                     Message
                   </label>
-                  <div className="message-input col-lg-10 col-md-10 col-sm-10">
+                  <div className="message-input col-lg-10 col-md-10 col-sm-10 col-10">
                     <textarea
                       onChange={messageChange}
                       value={message}
@@ -247,7 +247,7 @@ export default function Contact() {
             <h4 className="mb-3 cream-font">Contact</h4>
             <hr className="w-50 mx-auto mb-4 opacity-75"></hr>
 
-            <div className="card contact-card mb-5 col-lg-10 col-md-10 col-sm-12 col-12">
+            <div className="card contact-card mb-5 col-lg-10 col-md-10 col-sm-10 col-10">
               {contactInfo.map((infoArray) => (
                 <ul className="list-group">
                   <a

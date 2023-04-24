@@ -41,7 +41,7 @@ const projects = [
 export default function Portfolio() {
   return (
     <>
-    <div className='container page-container'>
+    <div className='container pb-5 page-container'>
     <div className='row'>
     
       {projects.map((oneProject) => (
