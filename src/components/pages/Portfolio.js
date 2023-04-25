@@ -11,6 +11,11 @@ const projects = [
     liveLink:  "https://shielded-basin-55972.herokuapp.com/",
   },
   {
+    name: "Tech Blog",
+    githubRepo:  "https://github.com/justincanavanmusic/tech-blog",
+    liveLink:     "https://floating-fortress-15177.herokuapp.com/",
+  },
+  {
     name: "Chicago Hotspot",
     githubRepo:  "https://github.com/allisonnault/Chicago-Attractions",
     liveLink:   "https://ancient-wildwood-93900.herokuapp.com/",
@@ -21,11 +26,6 @@ const projects = [
     liveLink:  "https://justincanavanmusic.github.io/music-dashboard/",
   },
 
-  {
-    name: "Tech Blog",
-    githubRepo:  "https://github.com/justincanavanmusic/tech-blog",
-    liveLink:     "https://floating-fortress-15177.herokuapp.com/",
-  },
   {
     name: "Social Network",
     githubRepo:  "https://github.com/justincanavanmusic/social-network",

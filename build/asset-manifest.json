@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-portfolio/static/css/main.967218e4.css",
-    "main.js": "/react-portfolio/static/js/main.82157b29.js",
+    "main.css": "/react-portfolio/static/css/main.5f7f94b3.css",
+    "main.js": "/react-portfolio/static/js/main.df95667d.js",
     "static/media/Screenshot 2023-03-28 at 5.44.08 PM.png": "/react-portfolio/static/media/Screenshot 2023-03-28 at 5.44.08 PM.76b516dea21ead2c0038.png",
-    "static/media/justin-canavan-resume.pdf": "/react-portfolio/static/media/justin-canavan-resume.d8bb739179a6274828c5.pdf",
+    "static/media/justin-canavan-resume-final.pdf": "/react-portfolio/static/media/justin-canavan-resume-final.3761da510a8678fed77b.pdf",
     "index.html": "/react-portfolio/index.html",
-    "main.967218e4.css.map": "/react-portfolio/static/css/main.967218e4.css.map",
-    "main.82157b29.js.map": "/react-portfolio/static/js/main.82157b29.js.map"
+    "main.5f7f94b3.css.map": "/react-portfolio/static/css/main.5f7f94b3.css.map",
+    "main.df95667d.js.map": "/react-portfolio/static/js/main.df95667d.js.map"
   },
   "entrypoints": [
-    "static/css/main.967218e4.css",
-    "static/js/main.82157b29.js"
+    "static/css/main.5f7f94b3.css",
+    "static/js/main.df95667d.js"
   ]
 }

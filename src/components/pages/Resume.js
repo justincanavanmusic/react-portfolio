@@ -1,5 +1,5 @@
 import React from "react";
-import resume from "../../assets/justin-canavan-resume.pdf";
+import resume from "../../assets/justin-canavan-resume-final.pdf";
 import './index.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket } from '@fortawesome/free-solid-svg-icons';
@@ -63,7 +63,7 @@ export default function Resume() {
       <div className="d-flex mb-5 justify-content-center">
         <div className="mb-5">
         <h5 className="font resume-margin mb-4">Download my resume with the icon below!</h5>
-      <a href={resume} download="justin-canavan-resume.pdf" className="font">
+      <a href={resume} download="justin-canavan-resume-final.pdf" className="font">
       <FontAwesomeIcon icon={faArrowUpFromBracket} size="2xl" />
       </a>
       <br></br>
