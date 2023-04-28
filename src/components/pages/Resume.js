@@ -21,6 +21,7 @@ let backEndSkills = [
   "API",
   "Node.js",
   "Express.js",
+  "GraphQL",
   "MySQL/Sequelize",
   "MongoDB/Mongoose",
   "ORM",

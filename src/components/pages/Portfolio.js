@@ -11,7 +11,7 @@ const projects = [
     liveLink:  "https://shielded-basin-55972.herokuapp.com/",
   },
   {
-    name: "Tech Blog",
+    name: "CodeCove",
     githubRepo:  "https://github.com/justincanavanmusic/tech-blog",
     liveLink:     "https://floating-fortress-15177.herokuapp.com/",
   },
@@ -42,7 +42,7 @@ const projects = [
 export default function Portfolio() {
   return (
     <>
-    <div className='container page-container'>
+    <div className='container page-container pb-5'>
     <div className='row'>
     
       {projects.map((oneProject) => (
