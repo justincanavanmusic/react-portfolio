@@ -1,8 +1,9 @@
 import React from "react";
-import resume from "../../assets/justin-canavan-resume-final.pdf";
+import resume from "../../assets/jc-res-5-12.pdf";
 import "./index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUpFromBracket, faArrowRight, faFile } from "@fortawesome/free-solid-svg-icons";
+// import { faArrowRight } from '@fortawesome/free-solid-svg-icons' 
 
 let frontEndSkills = [
   "JavaScript",
@@ -24,12 +25,6 @@ let backEndSkills = [
   "GraphQL",
   "AWS",
 ];
-
-// let fullStackSkills = [
-//   "OOP",
-//   "MERN",
-//   "MVC"
-// ]
 
 export default function Resume() {
   return (
@@ -61,24 +56,29 @@ export default function Resume() {
                 </ul>
               </div>
             </div>
+            </div>
           </div>
 
           <div className="col-12 mx-auto row">
             <div className="col-6">
-              <h5 className="font mb-4">Download my resume! </h5>
+              <h5 className="code-font">Check out my resume! </h5>
+              <br></br>
+              <FontAwesomeIcon icon={faArrowRight} fade size="2xl" />
             </div>
             <div className="col-6">
+            <h5 className="code-font font">Download below!</h5>
+            <br></br>
               <a
                 href={resume}
-                download="justin-canavan-resume-final.pdf"
+                download="jc-res-5-12.pdf"
                 className="font"
               >
-                <FontAwesomeIcon icon={faArrowUpFromBracket} size="2xl" />
+<FontAwesomeIcon className='' icon={faFile} fade size="2xl" style={{color: "#f0ebd8",}} />
               </a>
             </div>
             <br></br>
           </div>
-        </div>
+
       </div>
     </>
   );
