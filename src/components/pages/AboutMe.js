@@ -7,18 +7,15 @@ const style = {
       borderRadius: "10%"
   }
 }
-// width='20%' height='25%' 
 
 export default function AboutMe() {
   
     return (
         <>
-      <div className='container about-me-container'>
+      <div className='container pb-1'>
 
      
       <h2 className='cream-font about-me'>About Me</h2>
-      {/* <hr className='w-25 mx-auto opacity-75'></hr> */}
-    
       
       <img src={photo} style={style.photo} alt='Justin Canavan headshot' 
       className="headshot mb-3"></img>
