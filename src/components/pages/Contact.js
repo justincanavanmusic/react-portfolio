@@ -47,7 +47,6 @@ export default function Contact() {
 
   const inputChange = (e) => {
     const { name, email, value } = e.target;
-    // console.log(userInput)
 
     setUserInput(() => {
       return {
@@ -126,7 +125,7 @@ export default function Contact() {
         </div>
       )}
 
-      <div className="container page-container text-center mt-5 ">
+      <div className="container page-container text-center mt-5 pb-5 ">
         <div className="row">
           <div className="mx-auto col-sm-12 col-md-9 col-lg-6">
             <h4 className="cream-font mb-3">Send me a message!</h4>

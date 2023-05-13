@@ -24,17 +24,6 @@ const projects = [
     name: "Music Dashboard",
     githubRepo:  "https://github.com/justincanavanmusic/music-dashboard",
     liveLink:  "https://justincanavanmusic.github.io/music-dashboard/",
-  },
-
-  {
-    name: "Social Network",
-    githubRepo:  "https://github.com/justincanavanmusic/social-network",
-    liveLink:     "https://drive.google.com/file/d/1nRsv6q8O5oznPrG5Xtk0P9ir9OleHZzF/view",
-  },
-  {
-    name: "E-Commerce",
-    githubRepo:  "https://github.com/justincanavanmusic/e-commerce",
-    liveLink:     "https://drive.google.com/file/d/15MhGYxOhOXy701-hpVT0WT51Khw79zJt/view",
   }
  
 ]
@@ -42,11 +31,11 @@ const projects = [
 export default function Portfolio() {
   return (
     <>
-    <div className='container page-container pb-5'>
+    <div className='container pb-5'>
     <div className='row'>
     
       {projects.map((oneProject) => (
-          <div className='col-9 col-sm-9 col-md-4 col-lg-4 contact-card'>
+          <div className='col-9 col-sm-9 col-md-6 col-lg-6 contact-card'>
           <div className="card footer-background dark-blue-font mt-5">
             <div className="card-body">
     

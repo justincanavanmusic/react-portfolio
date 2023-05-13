@@ -1,89 +1,84 @@
 import React from "react";
 import resume from "../../assets/justin-canavan-resume-final.pdf";
-import './index.css';
+import "./index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUpFromBracket } from '@fortawesome/free-solid-svg-icons';
-
+import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 let frontEndSkills = [
-  "Javascript",
-  "React",
-  "JQuery",
+  "JavaScript",
+  "React.js",
   "Handlebars.js",
   "Webpack",
   "CSS",
-  "Bootstrap",
+  "JQuery",
   "HTML",
-  
 ];
 
 let backEndSkills = [
-  "API",
   "Node.js",
   "Express.js",
-  "GraphQL",
+  "RESTful API",
   "MySQL/Sequelize",
+  "NOSQL",
   "MongoDB/Mongoose",
-  "ORM",
-  "REST"
+  "GraphQL",
+  "AWS",
 ];
 
-let fullStackSkills = [
-  "OOP",
-  "MERN",
-  "MVC"
-]
+// let fullStackSkills = [
+//   "OOP",
+//   "MERN",
+//   "MVC"
+// ]
 
 export default function Resume() {
   return (
     <>
-      <div className="page-container d-flex flex-row justify-content-evenly mb-3 mt-4 font">
-        
-      <div className="d-flex p-2">
-        <div className='d-block'>
-      <h4 className="mb-4">Front End Proficiencies</h4>
-      <ul className="list-group">
-       
-            {frontEndSkills.map((oneSkill) => (
-              <li className="list-items list-group-item">{oneSkill}</li>
-            ))}
-             </ul>
-          </div>
-        </div> 
-        
-        <div className="d-flex p-2">
-          <div className='d-block'>
-        <h4 className="mb-4">Full-Stack Proficiencies</h4>
-        <ul className="list-group">
-         
-              {fullStackSkills.map((oneSkill) => (
-                <li className="list-items list-group-item">{oneSkill}</li>
-              ))}
-               </ul>
-               <div className='container'>
-      <div className="d-flex mb-5 justify-content-center">
-        <div className="mb-5">
-        <h5 className="font resume-margin mb-4">Download my resume with the icon below!</h5>
-      <a href={resume} download="justin-canavan-resume-final.pdf" className="font">
-      <FontAwesomeIcon icon={faArrowUpFromBracket} size="2xl" />
-      </a>
-      <br></br>
-      </div>
-      </div>
-      </div>
+      <div className="container-fluid pb-5">
+        <div className="row mx-auto flex-wrap col-12">
+          <div className="d-flex col-md-6 col-lg-6 col-sm-6 col-12 p-2 mb-5">
+            <div className="col-8 mx-auto">
+              <div className="d-block">
+                <h4 className="mb-3 mt-3">Front End Proficiencies</h4>
+                <hr className="resume-hr mb-4 mx-auto opacity-75"></hr>
+                <ul className="list-group">
+                  {frontEndSkills.map((oneSkill) => (
+                    <li className="list-items list-group-item">{oneSkill}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div> 
+          </div>
+          <div className="d-flex col-md-6 col-lg-6 col-sm-6 col-12 mb-4 p-2">
+            <div className="col-8 mx-auto">
+              <div className="d-block">
+                <h4 className="mb-3 mt-3">Back End Proficiencies</h4>
+                <hr className="resume-hr mb-4 mx-auto opacity-75"></hr>
+                <ul className="list-group">
+                  {backEndSkills.map((oneSkill) => (
+                    <li className="list-group-item list-items">{oneSkill}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
 
-      <div className="d-flex p-2">
-      <div className='d-block'>
-      <h4 className="mb-4">Back End Proficiencies</h4>
-        <ul className="list-group">
-          {backEndSkills.map((oneSkill) => (
-            <li className="list-group-item list-items">{oneSkill}</li>
-          ))}
-        </ul >
-      </div>
-      </div>
+          <div className="col-12 mx-auto row">
+            <div className="col-6">
+              <h5 className="font mb-4">Download my resume! </h5>
+            </div>
+            <div className="col-6">
+              <a
+                href={resume}
+                download="justin-canavan-resume-final.pdf"
+                className="font"
+              >
+                <FontAwesomeIcon icon={faArrowUpFromBracket} size="2xl" />
+              </a>
+            </div>
+            <br></br>
+          </div>
+        </div>
       </div>
     </>
   );
