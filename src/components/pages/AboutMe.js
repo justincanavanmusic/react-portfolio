@@ -23,7 +23,12 @@ export default function AboutMe() {
       <div className='container'>
         <div className='mx-auto mb-5 col-lg-7 col-md-9 col-sm-10 col-11'>
 
-      <p className='bio'>A passionate, hard-working, full-stack web developer. Developed a strong foundation in teamwork, problem-solving, and time management over the last decade working in a language-based industry (music). Consistently managed tight deadlines and allocated time efficiently in high pressure situations, while simultaneously delivering a high-quality product. Known as a reliable professional who is always pushing to advance his craft. </p>
+      <p className='bio'>A passionate and hard-working <strong>Full-Stack</strong> software developer, proficient in Front-end and
+Back-end technologies ranging from JavaScript, React.js, Node.js, RESTful API’s, UI/UX design
+and more. Over a decade-long career in the music industry, I have honed my skills in the art of
+mastering a language, effective teamwork, meticulous attention to detail, allocating time
+efficiently in high-pressure situations, all while consistently delivering a high quality product.
+Known as a reliable professional who is always pushing to advance their craft. </p>
       </div>
       </div>
       </div>

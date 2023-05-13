@@ -2,9 +2,11 @@
   --darkBlue: #1d2d44;
   --medBlue: #3e5c76;
   --lightBlue: #748cab;
-  --cream: #f0ebd8;;
+  --cream: #f0ebd8;
   --color5: #0d1321;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 
 body {
   margin: 0;
@@ -19,8 +21,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.code-font {
+  font-family: 'Play' !important;
+}
+
 .black-font {
   color: black;
+}
+
+.background-cream {
+  background-color: var(--cream) !important;
 }
 
 .about-me-container {
