@@ -1,0 +1,69 @@
+:root {
+--typeWriterSpeed: 1.5s;
+--typeWriterChars: 23;
+}
+
+
+h2.abt-me-animation {
+    position: relative;
+    font-family: 'Play' !important;
+    width: max-content;
+    text-align: center !important
+  }
+  
+  h2.abt-me-animation::before,
+  h2.abt-me-animation::after {
+    content: '';
+    position: absolute; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  h2.abt-me-animation::before {
+    background: var(--darkBlue);
+    animation: typewriter var(--typeWriterSpeed) .5s steps(var(--typeWriterChars)) forwards;
+  }
+  
+  h2.abt-me-animation::after {
+    width: .125em;
+    background: white;
+    animation: typewriter var(--typeWriterSpeed) .5s steps(var(--typeWriterChars)) forwards,
+    blink var(--typeWriterSpeed) steps(var(--typeWriterChars)) infinite;
+  }
+
+  img.photo-anim {
+    opacity: 0;
+    transform: rotateX(3rem); 
+    animation: fadeIn 2s ease calc(var(--typeWriterSpeed) + 1s)forwards;
+  }
+  /* img.photo-anim::before,
+  img.photo-anim::after {
+    content: '';
+    position: absolute; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  } */
+
+  
+  @keyframes typewriter { 
+    to {
+      left: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    to {
+      background: transparent;
+    }
+  }
+
+  @keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: rotateX('360')
+    }
+  }

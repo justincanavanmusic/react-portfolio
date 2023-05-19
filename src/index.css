@@ -4,6 +4,8 @@
   --lightBlue: #748cab;
   --cream: #f0ebd8;
   --color5: #0d1321;
+  --typeWriterSpeed: 1.5s;
+  --typeWriterChars: 23;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
@@ -21,6 +23,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 
 .code-font {
   font-family: 'Play' !important;
