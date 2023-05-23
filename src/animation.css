@@ -14,6 +14,7 @@
   font-family: 'Play';
   text-align: left !important;
   margin-left: 10vw;
+  font-size: 5vh;
 }
 
 .wrapper .static-text {
@@ -25,15 +26,18 @@
   /* height: 85px; */
   height: 8vh;
   /* line-height: 90px; */
+
   line-height: 8vh;
   overflow: hidden;
 }
 
-.static-text div {
+.static-text {
   position: relative;
-  font-size: 5vh;
+  margin: 0 !important;
+  padding: 0 !important;
+  /* font-size: 5vh; */
 }
-.static-text ::after {
+.static-text div::after {
   content: '';
   position: absolute;
   left: 0;
@@ -45,13 +49,14 @@
 }
 ul {
   margin-left: 0 !important;
+  padding-left: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .dynamic-text li{
   list-style: none;
   position: relative;
-  margin-left: 0 !important;
-  font-size: 5vh;
+  font-size: 5.5vh;
   color: var(--red);
   top: 0;
   animation: slide 6s steps(3) 2s infinite;
@@ -71,9 +76,7 @@ ul {
   border-left: 2px solid white;
  
   animation: typing 2s steps(19) 2s infinite;
-  animation-iteration-count: 4;
-  /* animation-delay
-  */
+  /* animation-iteration-count: 4; */
   /* animation-iteration-count: 4; */
  
   /* steps is largest word length */
@@ -83,7 +86,8 @@ ul {
 @keyframes slide {
   100% {
     /* top: -270px; */
-    top: -24.1vh;
+    /* top: -22.3vh; */
+    top: -24.5vh;
   }
 }
 

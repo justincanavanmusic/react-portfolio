@@ -26,7 +26,7 @@ export default function AboutMe() {
       <div></div>
       <div class='wrapper'>
         <div class='static-text'>
-          I'm a</div> 
+          I'm a&nbsp; </div> 
         <ul class='dynamic-text'>
           <li><span>JavaScript Developer</span></li>
           <li><span>React Developer</span></li>
