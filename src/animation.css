@@ -8,8 +8,8 @@
   --photoFade: calc(var(typeWriterSpeed) + 1s);
 --typeWriterSpeed: 1.5s;
 --typeWriterChars: 23;
---staticText: 5.5s;
---dynamicText: calc(var(--staticText) + 1.5s)
+--staticText: 3.5s;
+--dynamicText: calc(var(--staticText) + 2s)
 
 }
 
@@ -52,10 +52,9 @@
   left: 0;
   height: 100%;
   width: 100%;
-  
   background: var(--darkBlue);
   border-left: 2px solid var(--darkBlue);
-  animation: typewriter 1s steps(6) var(--staticText) forwards, color-change 1s ease var(--staticText) forwards;
+  animation: typewriter 1s steps(6) calc(var(--staticText) + .5s) forwards, color-change 2s ease var(--staticText) forwards;
 }
 
 ul {
@@ -101,49 +100,12 @@ ul {
 }
 
 .dynamic-text li span::after {
-
-
   border-left: .125em solid var(--darkBlue);
   animation: typing 2s steps(19) var(--dynamicText) infinite,
-  blink var(--typeWriterSpeed) steps(var(--typeWriterChars)) infinite, to-white 1s ease var(--dynamicText) forwards; 
+  blink var(--typeWriterSpeed) steps(var(--typeWriterChars)) infinite, to-white 1s ease var(--dynamicText) forwards, border-to-blue 1s ease calc(var(--dynamicText) + 5s) forwards; 
   /* animation-delay: calc(var(--typeWriterSpeed) + 2); */
   animation-iteration-count: 4;
   /* steps is largest word length */
-}
-
-
-
-@keyframes slide {
-  100% {
-    /* top: -270px; */
-    /* top: -22.3vh; */
-    top: -22.4vh;
-  }
-}
-
-@keyframes to-white {
-  to {
-    border-left-color: white;
-  }
-}
-
-@keyframes color-change {
-  0% {
-    border-left-color: white;
-  }
-  95% {
-    border-left-color: white;
-  }
-  100% {
-    border-left-color: var(--darkBlue);
-  }
-}
-
-@keyframes typing {
-  100% {
-    left: 100%;
-    margin: 0 -20px 0 20px;
-  }
 }
 
 
@@ -175,7 +137,7 @@ h2.abt-me-animation {
     width: .125em;
     background: white;
     animation: typewriter var(--typeWriterSpeed) steps(var(--typeWriterChars)) forwards,
-    blink var(--typeWriterSpeed) steps(var(--typeWriterChars)) infinite;
+    blink var(--typeWriterSpeed) steps(var(--typeWriterChars)) infinite, color-change 1s ease var(--staticText) forwards, to-blue 1s ease calc(var(--staticText) - 2s) forwards;
     
     /* keyframes, anim duration, anim fill mode */
 
@@ -186,17 +148,8 @@ h2.abt-me-animation {
   img.photo-anim {
     opacity: 0;
     transform: rotateX(3rem); 
-    animation: fadeIn 3s ease calc(var(--typeWriterSpeed) + 1.5s) forwards;
+    animation: fadeIn 3s ease calc(var(--typeWriterSpeed) + .5s) forwards;
   }
-  /* img.photo-anim::before,
-  img.photo-anim::after {
-    content: '';
-    position: absolute; 
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  } */
 
   
   @keyframes typewriter { 
@@ -211,10 +164,61 @@ h2.abt-me-animation {
     }
   }
 
+  @keyframes to-blue {
+    to {
+      background: var(--darkBlue)
+    }
+  }
+
+  @keyframes border-to-blue {
+    0% {
+      border-left-color: white;
+    }
+    /* 95% {
+      border-left-color: white;
+    } */
+    100% {
+      border-left-color: var(--darkBlue)
+    }
+  }
+
   @keyframes fadeIn {
     to {
         opacity: 1;
         transform: rotateX('360')
     }
   }
+  @keyframes slide {
+  100% {
+    /* top: -270px; */
+    /* top: -22.3vh; */
+    top: -22.4vh;
+  }
+}
+
+@keyframes to-white {
+  to {
+    border-left-color: white;
+  }
+}
+
+  @keyframes color-change {
+  0% {
+    border-left-color: white;
+  }
+  95% {
+    border-left-color: white;
+  }
+  100% {
+    border-left-color: var(--darkBlue);
+  }
+}
+
+
+@keyframes typing {
+  100% {
+    left: 100%;
+    margin: 0 -20px 0 20px;
+  }
+}
 
