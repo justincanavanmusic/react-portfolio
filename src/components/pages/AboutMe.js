@@ -13,21 +13,30 @@ export default function AboutMe() {
   
     return (
         <>
-      <div className='container text-center pb-1'>
+      <div className='container text-center about-font pb-1'>
       <div className='d-flex justify-content-center'>
-      <h2 className='text-center abt-me-animation cream-font about-me'>Hi! I'm Justin Canavan.</h2>
+      <h2 className='text-center abt-me-animation about-me'>Hi! I'm Justin Canavan.</h2>
       </div>
 
+      <div className='row col-12'>
+        {/* <div className='col-12'> */}
+        <div className='col-6'>
+
       <img src={photo} style={style.photo} alt='Justin Canavan headshot' 
-      className="photo-anim headshot mb-3"></img>
+      className="photo-anim headshot mt-5 mb-3"></img>
       {/* <hr className='opacity-75 w-75 mx-auto mb-4'></hr> */}
-    
       </div>
-      <div></div>
-      <div class='wrapper'>
-        <div class='static-text'>
-          I'm a&nbsp; </div> 
-        <ul class='dynamic-text'>
+    
+ 
+      {/* <div className='col-6'> */}
+      <div className='col-6'>
+      
+      <div className='wrapper'>
+      <div className='d-block'>
+       <div className='text-center mt-5'><span className='static-text'>
+          I am a&nbsp;</span></div> 
+          
+        <ul className='border-left text-center dynamic-text'>
           <li><span>JavaScript Developer</span></li>
           <li><span>React Developer</span></li>
           {/* <li><span>RESTful API Consumer</span></li> */}
@@ -35,7 +44,14 @@ export default function AboutMe() {
           {/* <li><span>Brother, son, friend!</span></li> */}
 
         </ul>
+        </div>
+        </div>
+      {/* </div> */}
       </div>
+      </div>
+      {/* </div> */}
+      </div>
+  
 
     
   

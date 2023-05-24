@@ -5,16 +5,25 @@
   --cream: #f0ebd8;
   --color5: #0d1321;
   --red: rgb(213, 60, 60);
+  --photoFade: calc(var(typeWriterSpeed) + 1s);
 --typeWriterSpeed: 1.5s;
 --typeWriterChars: 23;
+--staticText: 5.5s;
+--dynamicText: calc(var(--staticText) + 1.5s)
+
 }
 
 .wrapper {
   display: flex;
   font-family: 'Play';
   text-align: left !important;
-  margin-left: 10vw;
+  /* margin-left: 10vw; */
+  /* text-align: center; */
   font-size: 5vh;
+}
+
+.about-font {
+  color: white !important;
 }
 
 .wrapper .static-text {
@@ -24,77 +33,116 @@
 
 .wrapper .dynamic-text { 
   /* height: 85px; */
-  height: 8vh;
+  height: 7vh;
   /* line-height: 90px; */
-
-  line-height: 8vh;
+  /* line-height: normal; */
   overflow: hidden;
 }
 
 .static-text {
   position: relative;
-  margin: 0 !important;
-  padding: 0 !important;
+  /* margin: 0 !important;
+  padding: 0 !important; */
+  height: 7vh;
   /* font-size: 5vh; */
 }
-.static-text div::after {
+.static-text::after {
   content: '';
   position: absolute;
   left: 0;
   height: 100%;
   width: 100%;
+  
   background: var(--darkBlue);
-  border-left: 2px solid white;
-  animation: typing 2s steps(5) forwards;
+  border-left: 2px solid var(--darkBlue);
+  animation: typewriter 1s steps(6) var(--staticText) forwards, color-change 1s ease var(--staticText) forwards;
 }
+
 ul {
   margin-left: 0 !important;
   padding-left: 0 !important;
   margin-bottom: 0 !important;
 }
 
+.dynamic-text li::before {
+  
+  background: var(--darkBlue);
+  animation: typewriter var(--typeWriterSpeed) .5s steps(var(--typeWriterChars)) forwards;
+}
+
 .dynamic-text li{
   list-style: none;
   position: relative;
-  font-size: 5.5vh;
+  /* font-size: 5.5vh; */
   color: var(--red);
   top: 0;
-  animation: slide 6s steps(3) 2s infinite;
+  animation: slide 6s steps(3) var(--dynamicText) infinite;
 }
 
 .dynamic-text li span{
  position: relative;  
+
 }
 
+.dynamic-text li span::before,
 .dynamic-text li span::after {
   content: '';
   position: absolute;
   left: 0;
   height: 120%;
   width: 100%;
-  background: var(--darkBlue);
-  border-left: 2px solid white;
- 
-  animation: typing 2s steps(19) 2s infinite;
-  /* animation-iteration-count: 4; */
-  /* animation-iteration-count: 4; */
- 
-  /* steps is largest word length */
-
 }
+
+.dynamic-text li span::before {
+  background: var(--darkBlue);
+  animation: typing 2s steps(19) var(--dynamicText) infinite;
+  animation-iteration-count: 4;
+  
+}
+
+.dynamic-text li span::after {
+
+
+  border-left: .125em solid var(--darkBlue);
+  animation: typing 2s steps(19) var(--dynamicText) infinite,
+  blink var(--typeWriterSpeed) steps(var(--typeWriterChars)) infinite, to-white 1s ease var(--dynamicText) forwards; 
+  /* animation-delay: calc(var(--typeWriterSpeed) + 2); */
+  animation-iteration-count: 4;
+  /* steps is largest word length */
+}
+
+
 
 @keyframes slide {
   100% {
     /* top: -270px; */
     /* top: -22.3vh; */
-    top: -24.5vh;
+    top: -22.4vh;
+  }
+}
+
+@keyframes to-white {
+  to {
+    border-left-color: white;
+  }
+}
+
+@keyframes color-change {
+  0% {
+    border-left-color: white;
+  }
+  95% {
+    border-left-color: white;
+  }
+  100% {
+    border-left-color: var(--darkBlue);
   }
 }
 
 @keyframes typing {
   100% {
     left: 100%;
-    margin: 0 -45px 0 35px;
+    margin: 0 -20px 0 20px;
   }
 }
 
@@ -120,13 +168,13 @@ h2.abt-me-animation {
   h2.abt-me-animation::before {
   
     background: var(--darkBlue);
-    animation: typewriter var(--typeWriterSpeed) .5s steps(var(--typeWriterChars)) forwards;
+    animation: typewriter var(--typeWriterSpeed) steps(var(--typeWriterChars)) forwards;
   }
   
   h2.abt-me-animation::after {
     width: .125em;
     background: white;
-    animation: typewriter var(--typeWriterSpeed) .5s steps(var(--typeWriterChars)) forwards,
+    animation: typewriter var(--typeWriterSpeed) steps(var(--typeWriterChars)) forwards,
     blink var(--typeWriterSpeed) steps(var(--typeWriterChars)) infinite;
     
     /* keyframes, anim duration, anim fill mode */
@@ -138,7 +186,7 @@ h2.abt-me-animation {
   img.photo-anim {
     opacity: 0;
     transform: rotateX(3rem); 
-    animation: fadeIn 4s ease calc(var(--typeWriterSpeed) + 1.5s) forwards;
+    animation: fadeIn 3s ease calc(var(--typeWriterSpeed) + 1.5s) forwards;
   }
   /* img.photo-anim::before,
   img.photo-anim::after {
@@ -169,3 +217,4 @@ h2.abt-me-animation {
         transform: rotateX('360')
     }
   }
+
