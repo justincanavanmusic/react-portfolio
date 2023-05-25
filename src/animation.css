@@ -9,8 +9,83 @@
 --typeWriterSpeed: 1.5s;
 --typeWriterChars: 23;
 --staticText: 3.5s;
---dynamicText: calc(var(--staticText) + 2s)
+--dynamicText: calc(var(--staticText) + 2s);
+--imJC: 2s;
+--hiType: .5s;
+--blinkSpeed: .8s;
+--blinkSteps: 20;
+--start: .3s
 
+}
+
+.hi {
+  position: relative;
+  font-family: 'Play' !important;
+  width: max-content;
+}
+
+.hi::before {
+  background: var(--darkBlue);
+  animation: typewriter var(--hiType) steps(4) var(--start) forwards, 
+  to-white .1s ease 1s forwards;
+  /* blinking var(--blinkSpeed) steps(20) 1s  infinite; */
+
+}
+
+.hi::after {
+  width: .125em;
+  background: white;
+  animation: typewriter var(--hiType) steps(4) var(--start) forwards,  
+  blinking var(--blinkSpeed) steps(var(--blinkSteps)) infinite, 
+  to-blue .1s ease calc(var(--hiType)) forwards;
+ 
+  
+}
+
+h2 span.abt-me-animation {
+  position: relative;
+  font-family: 'Play' !important;
+  width: max-content;
+  text-align: center !important;
+  /* animation-play-state: paused; */
+}
+
+h2 span.hi::before,
+h2 span.hi::after,
+h2 span.abt-me-animation::before,
+h2 span.abt-me-animation::after {
+  content: '';
+  position: absolute; 
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+h2 span.abt-me-animation::before {
+
+  background: var(--darkBlue);
+  animation: typewriter var(--typeWriterSpeed) steps(var(--typeWriterChars)) var(--imJC) forwards;
+}
+
+.abt-me-animation::after {
+  width: .125em;
+  background: var(--darkBlue);
+  animation: typewriter var(--typeWriterSpeed) steps(var(--typeWriterChars)) var(--imJC) forwards, to-white .1s ease calc(var(--hiType) + var(--start)) forwards, 
+  blinking var(--blinkSpeed) steps(var(--blinkSteps)) infinite, to-blue .2s ease calc(var(--staticText) + 2s) forwards;
+  
+  /* color-change 1s ease var(--staticText) forwards, to-blue 1s ease calc(var(--staticText) - 2s) forwards; */
+  
+  /* keyframes, anim duration, anim fill mode */
+
+  /* keyframes, duration, anim-time-function */
+
+}
+
+img.photo-anim {
+  opacity: 0;
+  transform: rotateX(3rem); 
+  animation: fadeIn 3s ease calc(var(--typeWriterSpeed) + .5s) forwards;
 }
 
 .wrapper {
@@ -102,55 +177,11 @@ ul {
 .dynamic-text li span::after {
   border-left: .125em solid var(--darkBlue);
   animation: typing 2s steps(19) var(--dynamicText) infinite,
-  blink var(--typeWriterSpeed) steps(var(--typeWriterChars)) infinite, to-white 1s ease var(--dynamicText) forwards, border-to-blue 1s ease calc(var(--dynamicText) + 5s) forwards; 
+  blinking var(--typeWriterSpeed) steps(var(--typeWriterChars)) infinite, to-white 1s ease var(--dynamicText) forwards, border-to-blue 1s ease calc(var(--dynamicText) + 5s) forwards; 
   /* animation-delay: calc(var(--typeWriterSpeed) + 2); */
   animation-iteration-count: 4;
   /* steps is largest word length */
 }
-
-
-h2.abt-me-animation {
-    position: relative;
-    font-family: 'Play' !important;
-    width: max-content;
-    text-align: center !important;
-    animation-play-state: paused;
-  }
-  
-  h2.abt-me-animation::before,
-  h2.abt-me-animation::after {
-    content: '';
-    position: absolute; 
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-  
-  h2.abt-me-animation::before {
-  
-    background: var(--darkBlue);
-    animation: typewriter var(--typeWriterSpeed) steps(var(--typeWriterChars)) forwards;
-  }
-  
-  h2.abt-me-animation::after {
-    width: .125em;
-    background: white;
-    animation: typewriter var(--typeWriterSpeed) steps(var(--typeWriterChars)) forwards,
-    blink var(--typeWriterSpeed) steps(var(--typeWriterChars)) infinite, color-change 1s ease var(--staticText) forwards, to-blue 1s ease calc(var(--staticText) - 2s) forwards;
-    
-    /* keyframes, anim duration, anim fill mode */
-
-    /* keyframes, duration, anim-time-function */
-
-  }
-
-  img.photo-anim {
-    opacity: 0;
-    transform: rotateX(3rem); 
-    animation: fadeIn 3s ease calc(var(--typeWriterSpeed) + .5s) forwards;
-  }
-
   
   @keyframes typewriter { 
     to {
@@ -158,7 +189,7 @@ h2.abt-me-animation {
     }
   }
   
-  @keyframes blink {
+  @keyframes blinking {
     to {
       background: transparent;
     }
@@ -169,6 +200,13 @@ h2.abt-me-animation {
       background: var(--darkBlue)
     }
   }
+
+  @keyframes to-white {
+    to {
+      background: white;
+    }
+  }
+
 
   @keyframes border-to-blue {
     0% {
@@ -196,11 +234,11 @@ h2.abt-me-animation {
   }
 }
 
-@keyframes to-white {
+/* @keyframes to-white {
   to {
     border-left-color: white;
   }
-}
+} */
 
   @keyframes color-change {
   0% {

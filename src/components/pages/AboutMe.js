@@ -15,7 +15,7 @@ export default function AboutMe() {
         <>
       <div className='container text-center about-font pb-1'>
       <div className='d-flex justify-content-center'>
-      <h2 className='text-center abt-me-animation about-me'>Hi! I'm Justin Canavan.</h2>
+      <h2 className='text-center about-me'><span className='hi'>Hi! </span><span className='abt-me-animation'>I'm Justin Canavan.</span></h2>
       </div>
 
       <div className='row col-12'>
