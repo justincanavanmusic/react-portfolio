@@ -34,13 +34,13 @@ export default function AboutMe() {
       <div className='wrapper'>
       <div className='d-block'>
        <div className='text-center mt-5'><span className='static-text'>
-          I am a&nbsp;</span></div> 
+          I am a</span></div> 
           
         <ul className='border-left text-center dynamic-text'>
-          <li><span>JavaScript Developer</span></li>
-          <li><span>React Developer</span></li>
+          <li><span className='dynamic-text'>JavaScript Developer</span></li>
+          <li><span className='dynamic-text'>React Developer</span></li>
           {/* <li><span>RESTful API Consumer</span></li> */}
-          <li><span>Musician</span></li>
+          <li><span className='dynamic-text'>Musician</span></li>
           {/* <li><span>Brother, son, friend!</span></li> */}
 
         </ul>
