@@ -5,16 +5,17 @@
   --cream: #f0ebd8;
   --color5: #0d1321;
   --red: rgb(213, 60, 60);
-  --photoFade: calc(var(typeWriterSpeed) + 1s);
+  --photoFade: calc(var(--hiType) + var(--imJC) + var(--typeWriterSpeed));
 --typeWriterSpeed: 1.5s;
 --typeWriterChars: 23;
---staticText: 3.5s;
---dynamicText: calc(var(--staticText) + 2s);
+--staticText: calc(var(--header) + var(--typeWriterSpeed));
+--dynamicText: calc(var(--header) + var(--typeWriterSpeed) + 2s);
 --imJC: 2s;
 --hiType: .5s;
---blinkSpeed: .8s;
+--blinkSpeed: 1s;
 --blinkSteps: 20;
---start: .3s
+--start: .3s;
+--header: calc(var(--start) + var(--typeWriterSpeed) + var(--hiType) + var(--imJC));
 
 }
 
@@ -71,8 +72,13 @@ h2 span.abt-me-animation::before {
 .abt-me-animation::after {
   width: .125em;
   background: var(--darkBlue);
-  animation: typewriter var(--typeWriterSpeed) steps(var(--typeWriterChars)) var(--imJC) forwards, to-white .1s ease calc(var(--hiType) + var(--start)) forwards, 
-  blinking var(--blinkSpeed) steps(var(--blinkSteps)) infinite, to-blue .2s ease calc(var(--staticText) + 2s) forwards;
+  animation: 
+  
+  typewriter var(--typeWriterSpeed) steps(var(--typeWriterChars)) var(--imJC) forwards, 
+
+  to-white .1s ease calc(var(--hiType) + var(--start)) forwards, 
+  blinking var(--blinkSpeed) steps(var(--blinkSteps)) infinite, 
+  to-blue .9s ease calc(var(--staticText) - .5s) forwards;
   
   /* color-change 1s ease var(--staticText) forwards, to-blue 1s ease calc(var(--staticText) - 2s) forwards; */
   
@@ -85,7 +91,7 @@ h2 span.abt-me-animation::before {
 img.photo-anim {
   opacity: 0;
   transform: rotateX(3rem); 
-  animation: fadeIn 3s ease calc(var(--typeWriterSpeed) + .5s) forwards;
+  animation: fadeIn 3s ease calc(var(--photoFade) + 1s)forwards
 }
 
 .wrapper {
@@ -170,16 +176,18 @@ ul {
 .dynamic-text li span::before {
   background: var(--darkBlue);
   animation: typing 2s steps(19) var(--dynamicText) infinite;
-  animation-iteration-count: 4;
+  animation-iteration-count: 3;
   
 }
 
 .dynamic-text li span::after {
-  border-left: .125em solid var(--darkBlue);
+  /* border-left: .125em solid var(--darkBlue); */
+  width: .125em;
+  background: var(--darkBlue);
   animation: typing 2s steps(19) var(--dynamicText) infinite,
-  blinking var(--typeWriterSpeed) steps(var(--typeWriterChars)) infinite, to-white 1s ease var(--dynamicText) forwards, border-to-blue 1s ease calc(var(--dynamicText) + 5s) forwards; 
+  blinking var(--blinkSpeed) steps(var(--typeWriterChars)) infinite, to-white 1s ease var(--dynamicText) forwards, to-blue .5s ease calc(var(--dynamicText) + 4.5s) forwards; 
   /* animation-delay: calc(var(--typeWriterSpeed) + 2); */
-  animation-iteration-count: 4;
+  animation-iteration-count: 3;
   /* steps is largest word length */
 }
   
