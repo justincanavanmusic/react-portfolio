@@ -230,16 +230,16 @@ li.word4 {
 
 .dynamic-text li span.word-3::before {
   background: var(--darkBlue);
-  animation: typing 1s steps(8) calc(var(--dynamicText) + 7s) forwards;
+  animation: typewriter 1s steps(8) calc(var(--dynamicText) + 7s) forwards;
   animation-iteration-count: 1;
-  
+
 }
 
 .dynamic-text.word-3::after {
   width: .125em;
   background: var(--darkBlue);
-  animation: typing 1s steps(8) calc(var(--dynamicText) + 7s) forwards,
-  blinking var(--blinkSpeed) steps(var(--typeWriterChars)) infinite,
+  animation: typewriter 1s steps(8) calc(var(--dynamicText) + 7s) forwards,
+  blinking var(--blinkSpeed)  steps(var(--typeWriterChars)) infinite,
   to-white 1s ease var(--dynamicText) forwards;
   animation-iteration-count: 1;
 }
@@ -256,7 +256,7 @@ li.word4 {
   background: var(--darkBlue);
   animation: typing 2s steps(18) calc(var(--dynamicText) + 9s) forwards,
   to-white 1s ease var(--dynamicText) forwards,
-  blinking var(--blinkSpeed) steps(var(--typeWriterChars)) infinite; 
+  blinking var(--blinkSpeed) steps(var(--typeWriterChars)) infinite, to-blue .5s ease calc(var(--dynamicText) + 11.2s) forwards;
   animation-iteration-count: 1;
 }
 
@@ -316,7 +316,7 @@ li.word4 {
 @keyframes typing {
   100% {
     left: 100%;
-    margin: 0 -10px 0 10px;
+    margin: 0 -5px 0 5px;
   }
 }
 
