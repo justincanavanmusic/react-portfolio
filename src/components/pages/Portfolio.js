@@ -17,14 +17,14 @@ const projects = [
   },
   {
     name: "Chicago Hotspot",
-    githubRepo:  "https://github.com/allisonnault/Chicago-Attractions",
-    liveLink:   "https://ancient-wildwood-93900.herokuapp.com/",
+    githubRepo:  "https://github.com/justincanavanmusic/chicago-hotspot",
+    liveLink:   "https://pacific-beach-56680.herokuapp.com/",
   },
-  {
-    name: "Music Dashboard",
-    githubRepo:  "https://github.com/justincanavanmusic/music-dashboard",
-    liveLink:  "https://justincanavanmusic.github.io/music-dashboard/",
-  }
+  // {
+  //   name: "Music Dashboard",
+  //   githubRepo:  "https://github.com/justincanavanmusic/music-dashboard",
+  //   liveLink:  "https://justincanavanmusic.github.io/music-dashboard/",
+  // }
  
 ]
 
@@ -51,8 +51,6 @@ export default function Portfolio() {
           </div>
           </div>
              ))}
-      
-
       </div>
       </div>
     </>
