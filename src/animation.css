@@ -128,7 +128,7 @@ span.static-text::after {
   to-white .3s ease var(--staticText) forwards,
   to-blue .7s ease calc(var(--staticText) + 1.8s) forwards,
   blinking var(--blinkSpeed) steps(var(--typeWriterChars)) infinite;
- 
+
 }
 
 .static-text::before,
@@ -147,15 +147,37 @@ span.static-text::after {
   animation: typewriter var(--typeWriterSpeed) .5s steps(var(--typeWriterChars)) calc(var(--dynamicText) + 1s) forwards;
 }
 
+/* .dynamic-text li {
+  list-style: none;
+  position: relative;
+
+  color: var(--red);
+  top: 0;
+  animation: slide 6s steps(3) calc(var(--dynamicText) + 1s) infinite;
+} */
+
 .dynamic-text li {
   list-style: none;
   position: relative;
   /* font-size: 5.5vh; */
   color: var(--red);
   top: 0;
-  animation: slide 6s steps(3) calc(var(--dynamicText) + 1s) infinite;
+  text-align: center;
 }
 
+.dynamic-text li.word1 {
+  animation: slide 6s steps(3) calc(var(--dynamicText) + 1s) infinite;
+
+}
+
+.dynamic-text li.word2 {
+  animation: slide 6s steps(3) calc(var(--dynamicText) + 1s) infinite;
+  
+}
+
+.dynamic-text li.word3 {
+  animation: slide 6s steps(3) calc(var(--dynamicText) + 1s) infinite;
+}
 
 /* .word-1::before,
 .word-2::before,
@@ -185,7 +207,7 @@ span.static-text::after {
 .dynamic-text.word-1::after {
   width: .125em;
   background: var(--darkBlue);
-  animation: typing 2s steps(20) calc(var(--dynamicText) + 1s) infinite,
+  animation: typing 2s steps(20) calc(var(--dynamicText) + 1s) forwards,
   blinking var(--blinkSpeed) steps(var(--typeWriterChars)) infinite,
   to-white 1s ease var(--dynamicText) forwards;
   /* to-blue .3s ease calc(var(--dynamicText) + 6.2s) forwards; */
@@ -201,7 +223,7 @@ span.static-text::after {
 .dynamic-text li span.word-2::after {
   width: .125em;
   background: var(--darkBlue);
-  animation: typing 2s steps(15) calc(var(--dynamicText) + 1s) infinite,
+  animation: typing 2s steps(15) calc(var(--dynamicText) + 1s) forwards,
   blinking var(--blinkSpeed) steps(var(--typeWriterChars)) infinite,
   to-white 1s ease var(--dynamicText) forwards;  
   animation-iteration-count: 3;
@@ -216,7 +238,7 @@ span.static-text::after {
 li span.word-3::after {
   width: .125em;
   background: var(--darkBlue);
-  animation: typing 1s steps(8) calc(var(--dynamicText) + 1s) infinite,
+  animation: typing 1s steps(8) calc(var(--dynamicText) + 1s) forwards,
   blinking var(--blinkSpeed) steps(var(--typeWriterChars)) infinite,
   to-white 1s ease var(--dynamicText) forwards;  
   animation-iteration-count: 5;

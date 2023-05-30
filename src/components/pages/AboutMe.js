@@ -53,9 +53,9 @@ useEffect(() => {
           I am a</span></div> 
           
         <ul className='border-left text-center dynamic-text'>
-          <li><span ref={word1} className='dynamic-text word-1'>JavaScript Developer</span></li>
-          <li><span ref={word2}  className='dynamic-text word-2'>React Developer</span></li>
-          <li><span ref={word3}  className='dynamic-text word-3'>Musician</span></li>
+          <li className='word1'><span ref={word1} className='dynamic-text word-1'>JavaScript Developer</span></li>
+          <li className='word1'><span ref={word2}  className='dynamic-text word-2'>React Developer</span></li>
+          <li className='word1'><span ref={word3}  className='dynamic-text word-3'>Musician</span></li>
       
 
         </ul>
