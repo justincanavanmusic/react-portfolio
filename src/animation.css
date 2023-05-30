@@ -17,7 +17,12 @@
 --start: .3s;
 --header: calc(var(--start) + var(--typeWriterSpeed) + var(--hiType) + var(--imJC));
 
+}
 
+ul {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .hi {
@@ -48,7 +53,6 @@ h2 span.abt-me-animation {
   font-family: 'Play' !important;
   width: max-content;
   text-align: center !important;
-  /* animation-play-state: paused; */
 }
 
 h2 span.hi::before,
@@ -73,18 +77,10 @@ h2 span.abt-me-animation::before {
   width: .125em;
   background: var(--darkBlue);
   animation: 
-  
   typewriter var(--typeWriterSpeed) steps(var(--typeWriterChars)) var(--imJC) forwards, 
-
   to-white .4s ease calc(var(--hiType) + var(--start))forwards, 
   blinking var(--blinkSpeed) steps(var(--blinkSteps)) infinite, 
   to-blue .3s ease calc(var(--staticText) - .1s) forwards;
-  
-  /* color-change 1s ease var(--staticText) forwards, to-blue 1s ease calc(var(--staticText) - 2s) forwards; */
-  
-  /* keyframes, anim duration, anim fill mode */
-
-  /* keyframes, duration, anim-time-function */
 
 }
 
@@ -127,7 +123,6 @@ img.photo-anim {
 span.static-text::after {
   width: .125em;
   background: var(--darkBlue);
-  /* height: 100%; */
   animation: 
   typewriter 1s steps(6) calc(var(--staticText) + .5s) forwards, 
   to-white .3s ease var(--staticText) forwards,
@@ -135,17 +130,6 @@ span.static-text::after {
   blinking var(--blinkSpeed) steps(var(--typeWriterChars)) infinite;
  
 }
-
-ul {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.dynamic-text li span{
- position: relative;  
-}
-
 
 .static-text::before,
 .static-text::after,
@@ -158,13 +142,12 @@ ul {
   width: 100%;
 }
 
-/* .dynamic-text li::before {
-  
+.dynamic-text li::before {
   background: var(--darkBlue);
   animation: typewriter var(--typeWriterSpeed) .5s steps(var(--typeWriterChars)) calc(var(--dynamicText) + 1s) forwards;
-} */
+}
 
-.dynamic-text li{
+.dynamic-text li {
   list-style: none;
   position: relative;
   /* font-size: 5.5vh; */
@@ -173,27 +156,100 @@ ul {
   animation: slide 6s steps(3) calc(var(--dynamicText) + 1s) infinite;
 }
 
-.dynamic-text li span::before {
+
+/* .word-1::before,
+.word-2::before,
+.word-3::before {
   background: var(--darkBlue);
-  animation: typewriter 2s steps(19) calc(var(--dynamicText) + 1s) infinite;
-  animation-iteration-count: 3;
-  /* moves the darkBlue box to the right */
+} */
+
+/* .dynamic-text.word-1::after,
+.dynamic-text.word-2::after,
+.dynamic-text.word-3::after {
+  animation: to-white 1s ease var(--dynamicText) forwards;
+} */
+.word-1,
+.word-2,
+.word-3 {
+  position: relative;
+  width: max-content;
 }
 
+
+.dynamic-text li span.word-1::before {
+  background: var(--darkBlue);
+  animation: typing 2s steps(20) calc(var(--dynamicText) + 1s) infinite;
+  animation-iteration-count: 3;
+}
+
+.dynamic-text.word-1::after {
+  width: .125em;
+  background: var(--darkBlue);
+  animation: typing 2s steps(20) calc(var(--dynamicText) + 1s) infinite,
+  blinking var(--blinkSpeed) steps(var(--typeWriterChars)) infinite,
+  to-white 1s ease var(--dynamicText) forwards;
+  /* to-blue .3s ease calc(var(--dynamicText) + 6.2s) forwards; */
+  animation-iteration-count: 3;
+}
+
+.dynamic-text li span.word-2::before {
+  background: var(--darkBlue);
+  animation: typing 2s steps(15) calc(var(--dynamicText) + 1s);
+  animation-iteration-count: 3;
+}
+
+.dynamic-text li span.word-2::after {
+  width: .125em;
+  background: var(--darkBlue);
+  animation: typing 2s steps(15) calc(var(--dynamicText) + 1s) infinite,
+  blinking var(--blinkSpeed) steps(var(--typeWriterChars)) infinite,
+  to-white 1s ease var(--dynamicText) forwards;  
+  animation-iteration-count: 3;
+}
+
+.dynamic-text li span.word-3::before {
+  background: var(--darkBlue);
+  animation: typing 1s steps(8) calc(var(--dynamicText) + 1s) infinite;
+  animation-iteration-count: 5;
+  
+}
+li span.word-3::after {
+  width: .125em;
+  background: var(--darkBlue);
+  animation: typing 1s steps(8) calc(var(--dynamicText) + 1s) infinite,
+  blinking var(--blinkSpeed) steps(var(--typeWriterChars)) infinite,
+  to-white 1s ease var(--dynamicText) forwards;  
+  animation-iteration-count: 5;
+}
+
+/* .dynamic-text.word-1::after,
+.dynamic-text.word-2::after,
+.dynamic-text.word-3::after
+ {
+  width: .125em;
+  background: var(--darkBlue);
+  animation:
+  to-white 1s ease var(--dynamicText) forwards;
+  animation-iteration-count: 3
+} */
+
+
+
+
+/* 
 .dynamic-text li span::after {
   width: .125em;
   background: var(--darkBlue);
   animation: 
-  typewriter 2s steps(19) calc(var(--dynamicText) + 1s) infinite,
+  typing 2s steps(19) calc(var(--dynamicText) + 1s) infinite,
   blinking var(--blinkSpeed) steps(var(--typeWriterChars)) infinite,
   to-white 1s ease var(--dynamicText) forwards, 
-  to-blue .3s ease calc(var(--dynamicText) + 6.2s) forwards;
+  to-blue .3s ease calc(var(--dynamicText) + 6.2s) forwards; */
  
-  animation-iteration-count: 3;
  
   /* moves the white cursor to the right */
 
-}
+/* } */
   
   @keyframes typewriter { 
     to {
@@ -219,19 +275,6 @@ ul {
     }
   }
 
-
-  @keyframes border-to-blue {
-    0% {
-      border-left-color: white;
-    }
-    /* 95% {
-      border-left-color: white;
-    } */
-    100% {
-      border-left-color: var(--darkBlue)
-    }
-  }
-
   @keyframes fadeIn {
     to {
         opacity: 1;
@@ -246,13 +289,7 @@ ul {
   }
 }
 
-/* @keyframes to-white {
-  to {
-    border-left-color: white;
-  }
-} */
-
-  @keyframes color-change {
+  /* @keyframes color-change {
   0% {
     border-left-color: white;
   }
@@ -262,13 +299,13 @@ ul {
   100% {
     border-left-color: var(--darkBlue);
   }
-}
+} */
 
 
 @keyframes typing {
   100% {
     left: 100%;
-    margin: 0 -20px 0 20px;
+    margin: 0 -25px 0 25px;
   }
 }
 

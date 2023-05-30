@@ -1,4 +1,4 @@
- import React from 'react';
+ import React, { useRef, useEffect } from 'react';
 import './index.css';
 import photo from '../../assets/Screenshot 2023-03-28 at 5.44.08 PM.png'
 import '../../animation.css'
@@ -9,7 +9,23 @@ const style = {
   }
 }
 
+
+
 export default function AboutMe() {
+  const word1 = useRef(null)
+  const word2 = useRef(null)
+  const word3 = useRef(null)
+
+useEffect(() => {
+  let word1Length=word1.current.textContent.length;
+  let word2Length=word2.current.textContent.length;
+  let word3Length=word3.current.textContent.length;
+
+  console.log(word1Length)
+  console.log(word2Length)
+  console.log(word3Length)
+
+}, [word1, word2, word3])
   
     return (
         <>
@@ -37,11 +53,10 @@ export default function AboutMe() {
           I am a</span></div> 
           
         <ul className='border-left text-center dynamic-text'>
-          <li><span className='dynamic-text'>JavaScript Developer</span></li>
-          <li><span className='dynamic-text'>React Developer</span></li>
-          {/* <li><span>RESTful API Consumer</span></li> */}
-          <li><span className='dynamic-text'>Musician</span></li>
-          {/* <li><span>Brother, son, friend!</span></li> */}
+          <li><span ref={word1} className='dynamic-text word-1'>JavaScript Developer</span></li>
+          <li><span ref={word2}  className='dynamic-text word-2'>React Developer</span></li>
+          <li><span ref={word3}  className='dynamic-text word-3'>Musician</span></li>
+      
 
         </ul>
         </div>
