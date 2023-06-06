@@ -39,20 +39,20 @@ useEffect(() => {
 
       <div className='row col-12'>
         {/* <div className='col-12'> */}
-        <div className='col-6'>
+        <div className='col-12 col-sm-12 col-md-6 col-lg-6'>
 
       <img src={photo} style={style.photo} alt='Justin Canavan headshot' 
-      className="photo-anim headshot mt-5 mb-3"></img>
+      className="photo-anim photo-margin headshot mb-3"></img>
       {/* <hr className='opacity-75 w-75 mx-auto mb-4'></hr> */}
       </div>
     
  
       {/* <div className='col-6'> */}
-      <div className='col-6'>
+      <div className='col-12 col-sm-12 col-md-6 col-lg-6'>
       
       <div className='wrapper'>
       <div className='d-block'>
-       <div className='text-center mt-5'><span className='static-text'>
+       <div className='text-center i-am-margin'><span className='static-text'>
           I am a</span></div> 
           
         <ul className='border-left text-center dynamic-text'>

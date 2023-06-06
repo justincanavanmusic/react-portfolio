@@ -17,6 +17,12 @@
 --start: .3s;
 --header: calc(var(--start) + var(--typeWriterSpeed) + var(--hiType) + var(--imJC));
 
+
+--fs-xl: 5rem;
+--fs-600: 1.5rem;
+--fs-500: 1.25rem;
+--fs-400: 2rem;
+
 }
 
 ul {
@@ -95,6 +101,7 @@ img.photo-anim {
   font-family: 'Play';
   text-align: left !important;
   font-size: 5vh;
+  justify-content: space-around;
 }
 
 .about-font {
@@ -110,7 +117,7 @@ img.photo-anim {
   overflow: hidden;
 }
 .word1 {
-  padding-right: 50px;
+  padding-right: 3vw;
 }
 
 .static-text {
@@ -150,22 +157,17 @@ span.static-text::after {
   animation: typewriter var(--typeWriterSpeed) .5s steps(var(--typeWriterChars)) calc(var(--dynamicText) + 1s) forwards;
 }
 
-/* .dynamic-text li {
-  list-style: none;
-  position: relative;
-
-  color: var(--red);
-  top: 0;
-  animation: slide 6s steps(3) calc(var(--dynamicText) + 1s) infinite;
-} */
-
 .dynamic-text li {
   list-style: none;
   position: relative;
-  /* font-size: 5.5vh; */
+  /* font-size: 7vh; */
+  /* font-size: 3.5vw; */
   color: var(--red);
   top: 0;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 li.word1 {
@@ -299,24 +301,22 @@ li.word4 {
   }
 }
 
-
-  /* @keyframes color-change {
-  0% {
-    border-left-color: white;
-  }
-  95% {
-    border-left-color: white;
-  }
-  100% {
-    border-left-color: var(--darkBlue);
-  }
-} */
-
-
 @keyframes typing {
   100% {
     left: 100%;
     margin: 0 -5px 0 5px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .i-am-margin {
+    margin-top: 5vh;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .photo-margin {
+    margin-top: 5vh;
   }
 }
 
