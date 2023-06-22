@@ -9,9 +9,10 @@ let frontEndSkills = [
   "JavaScript",
   "React.js",
   "Handlebars.js",
+  "TypeScript",
   "Webpack",
   "CSS",
-  "JQuery",
+  "jQuery",
   "HTML",
 ];
 
