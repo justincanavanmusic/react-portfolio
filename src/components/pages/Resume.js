@@ -8,6 +8,7 @@ import { faArrowUpFromBracket, faArrowRight, faFile } from "@fortawesome/free-so
 let frontEndSkills = [
   "JavaScript",
   "React.js",
+  "TypeScript",
   "Handlebars.js",
   "Webpack",
   "CSS",
